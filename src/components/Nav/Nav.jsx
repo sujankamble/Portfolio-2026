@@ -54,7 +54,7 @@ export default function Nav() {
           <li><div className="nav-pill-sep"></div></li>
           <li><Link to="/about">About me</Link></li>
           <li><div className="nav-pill-sep"></div></li>
-          <li><a href="/UX-portfolio_SK/docs/resume.pdf" download="Resume.pdf" className="nav-resume">Resume</a></li>
+          <li><a href="/Portfolio-2026/docs/resume.pdf" download="Resume.pdf" className="nav-resume">Resume</a></li>
         </ul>
         <div className="nav-controls">
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle light/dark mode">
@@ -70,7 +70,7 @@ export default function Nav() {
         <button className="nav-link-btn" onClick={scrollToWork}>Work</button>
         <Link to="/about">About me</Link>
         <div className="drawer-divider"></div>
-        <a href="/UX-portfolio_SK/docs/resume.pdf" download="Resume.pdf" className="drawer-resume">Resume</a>
+        <a href="/Portfolio-2026/docs/resume.pdf" download="Resume.pdf" className="drawer-resume">Resume</a>
       </div>
     </>
   );
