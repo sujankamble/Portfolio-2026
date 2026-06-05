@@ -2953,4 +2953,131 @@
       .work-section{padding:0 16px 60px;}
       .hero-heading{font-family:"DM Serif Display",serif;font-size:clamp(32px,5.5vw,76px);font-weight:400;letter-spacing:-.03em;line-height:1.1;color:rgba(255,255,255,.92);margin-bottom:28px;}
     }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — TABLET / MOBILE / SMALL
+       1024px  →  tablet
+        767px  →  mobile
+        480px  →  small phone
+    ══════════════════════════════════════ */
+
+    /* ── TABLET (≤1024px) ── */
+    @media(max-width:1024px){
+      /* Project cards: stack image above text */
+      .project-card-full{flex-direction:column;padding:28px 32px;}
+      .pcf-right{width:100%;flex:none;order:-1;}
+      .pcf-image{height:220px;border-radius:12px;}
+      .pcf-left{width:100%;}
+
+      /* Stats: 2×2 grid */
+      .home-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px 32px;}
+
+      /* Testimonials: 2 columns */
+      .testimonials-grid{grid-template-columns:1fr 1fr;}
+
+      /* About page: stack hero */
+      .am-hero{flex-direction:column;gap:32px;padding:80px 32px 48px;}
+      .am-hero-left,.am-hero-right{width:100%;max-width:100%;}
+      .am-stats{grid-template-columns:repeat(2,1fr);}
+
+      /* Case study hero */
+      .cs-hero{padding:90px 32px 48px;}
+      .cs-layout{padding:40px 32px 60px;}
+      .cs-hero-intro{padding:32px 32px;}
+
+      /* Case study process cards: 2 columns */
+      .process-grid,.process-steps{grid-template-columns:repeat(2,1fr) !important;}
+
+      /* Sections padding */
+      .work-section-label{padding:40px 32px 20px;}
+      .project-cards-list{padding:0 32px 60px;}
+      .skills-ribbon-wrap{padding:0 32px;}
+      .lets-talk-section{padding:60px 32px;}
+      .testimonials-section{padding:60px 32px;}
+    }
+
+    /* ── MOBILE (≤767px) ── */
+    @media(max-width:767px){
+      /* Project cards: tight mobile */
+      .project-card-full{padding:20px 16px;border-radius:16px;}
+      .pcf-image{height:180px;}
+      .pcf-title{font-size:clamp(20px,5vw,28px);}
+      .project-cards-list{padding:0 16px 48px;}
+      .work-section-label{padding:32px 16px 16px;flex-direction:column;gap:16px;align-items:flex-start;}
+      .wsl-filters{flex-wrap:wrap;gap:8px;}
+
+      /* Stats: 2×2, smaller text */
+      .home-stats{grid-template-columns:1fr 1fr;gap:16px;padding:32px 16px;}
+      .home-stat-num{font-size:clamp(32px,8vw,48px);}
+
+      /* Testimonials: 1 column */
+      .testimonials-grid{grid-template-columns:1fr;gap:16px;}
+      .testimonials-section{padding:48px 16px;}
+
+      /* Skills ribbon */
+      .skills-ribbon-wrap{padding:0 16px;}
+
+      /* Let's Talk CTAs: column */
+      .lets-talk-ctas{flex-direction:column;gap:12px;}
+      .avail-cta{width:100%;justify-content:center;}
+      .lets-talk-section{padding:48px 16px;}
+      .lets-talk-heading{font-size:clamp(28px,7vw,48px);}
+
+      /* About page */
+      .am-hero{padding:80px 16px 40px;}
+      .am-section{padding:40px 16px;}
+      .am-stats{grid-template-columns:repeat(2,1fr);gap:16px;}
+      .skills-grid,.tools-row,.industries-row{flex-wrap:wrap;gap:8px;}
+
+      /* Case study hero */
+      .cs-hero{padding:80px 16px 40px;}
+      .cs-hero-intro{padding:28px 16px;}
+      .cs-layout{padding:32px 16px 48px;}
+      .cs-hero-title{font-size:clamp(26px,7vw,42px);}
+
+      /* Case study grids: all single column */
+      .cs-project-summary{grid-template-columns:1fr !important;}
+      .challenge-3col,.challenge-2col{grid-template-columns:1fr !important;}
+      .process-grid,.process-steps{grid-template-columns:1fr !important;}
+      .competitor-row{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .stagger-wrap{grid-template-columns:1fr !important;}
+
+      /* Tables: horizontal scroll */
+      .comp-table-wrap,.res-table-wrap,.swimlane-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .comp-table,.res-table,.swimlane{min-width:600px;}
+
+      /* Mobile drawer active state */
+      .nav-mobile-drawer a.active{color:rgba(255,255,255,.95);}
+      body.light-mode .nav-mobile-drawer a.active{color:#2A6DFF;}
+    }
+
+    /* ── SMALL PHONE (≤480px) ── */
+    @media(max-width:480px){
+      /* Project cards */
+      .project-card-full{padding:16px 12px;}
+      .pcf-image{height:150px;}
+
+      /* Stats */
+      .home-stats{padding:24px 12px;gap:12px;}
+      .home-stat-num{font-size:clamp(28px,9vw,40px);}
+      .home-stat-label{font-size:12px;}
+
+      /* About stats */
+      .am-stats{grid-template-columns:repeat(2,1fr);gap:12px;}
+
+      /* Case study */
+      .cs-hero{padding:72px 12px 32px;}
+      .cs-hero-intro{padding:20px 12px;}
+      .cs-layout{padding:24px 12px 40px;}
+      .cs-hero-meta{grid-template-columns:1fr 1fr;}
+
+      /* Let's Talk */
+      .lets-talk-section{padding:40px 12px;}
+
+      /* Testimonials */
+      .testimonials-section{padding:40px 12px;}
+    }
+
+    /* ── LIGHT MODE OVERRIDES for new responsive rules ── */
+    body.light-mode .nav-mobile-drawer a.active{color:#2A6DFF;}
   

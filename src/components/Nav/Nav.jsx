@@ -50,7 +50,9 @@ export default function Nav() {
         <ul className="nav-links">
           <li><Link to="/" className="nav-name-pill">Sujaan Kamble</Link></li>
           <li><div className="nav-pill-sep"></div></li>
-          <li><button className={`nav-link-btn${isHome ? ' active' : ''}`} onClick={scrollToWork}>Work</button></li>
+          <li><Link to="/" className={isHome ? 'active' : ''}>Home</Link></li>
+          <li><div className="nav-pill-sep"></div></li>
+          <li><button className="nav-link-btn" onClick={scrollToWork}>Work</button></li>
           <li><div className="nav-pill-sep"></div></li>
           <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About me</Link></li>
           <li><div className="nav-pill-sep"></div></li>
@@ -67,8 +69,9 @@ export default function Nav() {
         </div>
       </nav>
       <div className={`nav-mobile-drawer${drawerOpen ? ' open' : ''}`}>
+        <Link to="/" className={isHome ? 'active' : ''}>Home</Link>
         <button className="nav-link-btn" onClick={scrollToWork}>Work</button>
-        <Link to="/about">About me</Link>
+        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About me</Link>
         <div className="drawer-divider"></div>
         <a href="/Portfolio-2026/docs/resume.pdf" download="Resume.pdf" className="drawer-resume">Resume</a>
       </div>
