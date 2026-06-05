@@ -818,7 +818,7 @@
     .nav-links a,.nav-link-btn{font-size:14px;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;transition:color .2s,background .2s;cursor:none;padding:0 18px;height:34px;display:flex;align-items:center;border-radius:100px;white-space:nowrap;}
     .nav-link-btn{background:none;border:none;font-family:inherit;cursor:pointer;}
     .nav-links a:hover{color:rgba(255,255,255,.95);background:rgba(255,255,255,.06);}
-    .nav-links a.active{color:rgba(255,255,255,.95);}
+    .nav-links a.active,.nav-link-btn.active{color:rgba(255,255,255,.95);}
     .nav-pill-sep{width:.5px;height:14px;background:rgba(255,255,255,.12);flex-shrink:0;}
     /* Name pill item */
     .nav-name-pill{font-size:14px;font-weight:500;color:rgba(255,255,255,.90);text-decoration:none;padding:0 18px;height:34px;display:flex;align-items:center;border-radius:100px;cursor:none;transition:color .2s;white-space:nowrap;}
