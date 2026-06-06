@@ -926,7 +926,7 @@
     /* CS HERO */
     .cs-hero{min-height:72vh;display:flex;flex-direction:column;justify-content:flex-end;padding:100px 52px 56px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a0608 0%,#0f080f 60%,#0a0608 100%);}
     .cs-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 70% at 80% 50%,rgba(var(--cr),.22) 0%,transparent 70%),radial-gradient(ellipse 30% 40% at 10% 80%,rgba(255,107,53,.06) 0%,transparent 60%);}
-    .cs-hero-inner{display:flex;flex-direction:row;align-items:center;gap:40px;position:relative;z-index:2;width:100%;}
+    .cs-hero-inner{display:flex;flex-direction:row;align-items:flex-end;gap:40px;position:relative;z-index:2;width:100%;}
     .cs-hero-mockup-col{flex:0 0 58%;display:flex;align-items:flex-end;padding-top:60px;}
     .cs-hero-mockup{width:100%;height:auto;max-height:92vh;object-fit:contain;object-position:bottom;pointer-events:none;display:block;}
     .cs-hero-bar{position:absolute;top:0;left:0;right:0;height:3px;}
