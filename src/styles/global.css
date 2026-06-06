@@ -933,6 +933,7 @@
     .cs-hero-content{flex:1;position:relative;z-index:2;max-width:420px;padding-bottom:8px;}
     .cs-hero-intro-text{font-size:13px;font-weight:300;color:var(--ink3);line-height:1.7;font-style:italic;margin-top:20px;padding:12px 14px;border-top:none;background:rgba(10,6,8,0.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:8px;}
     body.light-mode .cs-hero-intro-text{background:rgba(242,245,255,0.75);}
+    .cs-hero-img-placeholder{width:100%;aspect-ratio:3/4;border:1px dashed rgba(var(--cr),0.25);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:rgba(var(--cr),0.4);font-size:12px;letter-spacing:.06em;}
     @media(max-width:1024px){.cs-hero-inner{gap:28px;}.cs-hero-mockup-col{flex:0 0 50%;}}
     @media(max-width:767px){.cs-hero-inner{flex-direction:column-reverse;gap:16px;}.cs-hero-mockup-col{flex:0 0 auto;width:80%;max-width:320px;padding-top:0;align-self:center;display:flex;}.cs-hero-mockup{max-height:40vh;}.cs-hero-content{max-width:100%;}}
     @media(max-width:480px){.cs-hero-mockup-col{display:none;}}
