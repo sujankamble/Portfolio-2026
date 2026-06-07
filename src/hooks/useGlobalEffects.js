@@ -205,3 +205,93 @@ export function useCursor() {
     return () => { document.removeEventListener('mousemove', onMove); cancelAnimationFrame(raf); };
   }, []);
 }
+
+export function useCaseSideNav() {
+  useEffect(() => {
+    // Only run on case study pages
+    if (!document.querySelector('.cs-content')) return;
+
+    // ── SVG icons ──
+    const ICONS = [
+      // The Brief — clipboard
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>`,
+      // Discovery — search
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+      // Define — target
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+      // Develop — tool
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+      // Deliver — flag
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+      // Reflect — star
+      `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    ];
+    const LABELS = ['The Brief', 'Discovery', 'Define', 'Develop', 'Deliver', 'Reflect'];
+
+    // ── Build sidebar ──
+    const nav = document.createElement('nav');
+    nav.className = 'cs-sidenav';
+    nav.setAttribute('aria-label', 'Page sections');
+
+    const track = document.createElement('div');
+    track.className = 'cs-sidenav-track';
+    const fill = document.createElement('div');
+    fill.className = 'cs-sidenav-fill';
+    track.appendChild(fill);
+    nav.appendChild(track);
+
+    const chapters = Array.from(document.querySelectorAll('.cs-content .chapter'));
+    const items = [];
+
+    chapters.forEach((chapter, i) => {
+      const item = document.createElement('a');
+      item.className = 'cs-sidenav-item';
+      item.href = `#${chapter.id}`;
+      item.innerHTML = `<span class="cs-sidenav-icon">${ICONS[i] || ICONS[ICONS.length - 1]}</span><span class="cs-sidenav-label">${LABELS[i] || `Section ${i + 1}`}</span>`;
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if (i > 0 && !chapter.classList.contains('ch-open')) {
+          chapter.querySelector('.ch-accordion-header')?.click();
+          setTimeout(() => chapter.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+        } else {
+          chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+      nav.appendChild(item);
+      items.push({ chapter, item });
+    });
+
+    document.body.appendChild(nav);
+
+    // ── Show/hide after hero ──
+    const hero = document.querySelector('.cs-hero');
+    let heroObs;
+    if (hero) {
+      heroObs = new IntersectionObserver(([entry]) => {
+        nav.classList.toggle('cs-sidenav--visible', !entry.isIntersecting);
+      }, { threshold: 0 });
+      heroObs.observe(hero);
+    }
+
+    // ── Active section + progress ──
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = items.findIndex(({ chapter }) => chapter === entry.target);
+          if (idx !== -1) {
+            items.forEach(({ item }, j) => item.classList.toggle('active', j === idx));
+            fill.style.height = `${(idx / Math.max(items.length - 1, 1)) * 100}%`;
+          }
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '-15% 0px -60% 0px' });
+
+    items.forEach(({ chapter }) => sectionObs.observe(chapter));
+
+    return () => {
+      nav.remove();
+      heroObs?.disconnect();
+      sectionObs.disconnect();
+    };
+  }, []);
+}
