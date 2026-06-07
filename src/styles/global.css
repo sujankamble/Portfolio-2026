@@ -2352,12 +2352,48 @@
     .cs-project-summary-wrap {
       margin: 48px 52px 0;
       perspective: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cs-summary-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      background: var(--surface);
+      border: .5px solid rgba(255,255,255,.08);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 8px 16px;
+      margin-left: 2px;
+      position: relative;
+      z-index: 1;
+      font-family: "DM Sans", sans-serif;
+    }
+    .cs-summary-tab::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(var(--cr), 0.7);
+      flex-shrink: 0;
+    }
+    body.light-mode .cs-summary-tab {
+      color: rgba(20,44,73,0.45);
+      background: #F2F5FF;
+      border-color: rgba(20,44,73,0.10);
     }
     .cs-project-summary {
       margin: 0;
+      width: 100%;
       padding: 40px 48px;
       border: .5px solid rgba(255,255,255,.08);
-      border-radius: 16px;
+      border-radius: 0 16px 16px 16px;
       background: rgba(255,255,255,.025);
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
