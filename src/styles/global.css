@@ -2359,48 +2359,37 @@
     .cs-summary-tab {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 12px;
       font-weight: 500;
-      letter-spacing: .10em;
+      letter-spacing: .09em;
       text-transform: uppercase;
-      color: rgba(var(--cr), 1);
-      background: rgba(var(--cr), 0.14);
-      border: .5px solid rgba(var(--cr), 0.25);
-      border-bottom: none;
-      border-radius: 8px 8px 0 0;
-      padding: 9px 18px;
+      color: #fff;
+      background: var(--c);
+      border: none;
+      border-radius: 0 0 8px 0;
+      padding: 8px 20px;
       margin-left: 0;
-      position: relative;
-      z-index: 1;
       font-family: "DM Sans", sans-serif;
     }
-    .cs-summary-tab::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(var(--cr), 1);
-      flex-shrink: 0;
-    }
+    .cs-summary-tab::before { display: none; }
     body.light-mode .cs-summary-tab {
-      color: rgba(var(--cr), 0.9);
-      background: rgba(var(--cr), 0.10);
-      border-color: rgba(var(--cr), 0.20);
-      border-bottom: none;
+      color: #fff;
+      background: var(--c);
+      border: none;
     }
     .cs-project-summary {
       margin: 0;
       width: 100%;
       padding: 40px 48px;
       border: .5px solid rgba(255,255,255,.08);
-      border-radius: 0 16px 16px 16px;
+      border-radius: 16px;
+      overflow: hidden;
       background: rgba(255,255,255,.025);
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 0;
       position: relative;
-      overflow: visible;
       transform-style: preserve-3d;
       transition: transform .1s ease, box-shadow .1s ease;
       will-change: transform;
@@ -2571,6 +2560,7 @@
     body.light-mode .cs-project-summary {
       background: #FFFFFF;
       border: .5px solid rgba(20,44,73,0.10);
+      border-radius: 16px;
     }
 
     body.light-mode .cps-label { color: rgba(20,44,73,0.38); }
