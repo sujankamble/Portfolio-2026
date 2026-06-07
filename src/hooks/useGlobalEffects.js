@@ -31,6 +31,63 @@ export function useScrollReveal() {
   }, []);
 }
 
+export function useChapterAccordion() {
+  useEffect(() => {
+    const chapters = document.querySelectorAll('.cs-content .chapter');
+    chapters.forEach((chapter, i) => {
+      if (chapter.dataset.accordion) return;
+      chapter.dataset.accordion = '1';
+
+      const label = chapter.querySelector('.chapter-label');
+      const title = chapter.querySelector('.chapter-title');
+      if (!label || !title) return;
+
+      // Build clickable header
+      const header = document.createElement('div');
+      header.className = 'ch-accordion-header';
+      header.appendChild(label.cloneNode(true));
+      header.appendChild(title.cloneNode(true));
+      const chevron = document.createElement('span');
+      chevron.className = 'ch-chevron';
+      chevron.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
+      header.appendChild(chevron);
+
+      // Wrap remaining content in collapsible body
+      const body = document.createElement('div');
+      body.className = 'ch-body';
+      const inner = document.createElement('div');
+      inner.className = 'ch-body-inner';
+      Array.from(chapter.children).forEach(child => {
+        if (!child.classList.contains('chapter-label') && !child.classList.contains('chapter-title')) {
+          inner.appendChild(child);
+        }
+      });
+      label.remove();
+      title.remove();
+      body.appendChild(inner);
+      chapter.appendChild(header);
+      chapter.appendChild(body);
+
+      // First chapter open by default
+      if (i === 0) {
+        chapter.classList.add('ch-open');
+        chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
+        chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
+      }
+
+      header.addEventListener('click', () => {
+        const isOpen = chapter.classList.toggle('ch-open');
+        if (isOpen) {
+          setTimeout(() => {
+            chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
+            chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
+          }, 50);
+        }
+      });
+    });
+  }, []);
+}
+
 export function useProjectSummaryTilt() {
   useEffect(() => {
     const wrap = document.querySelector('.cs-project-summary-wrap');
