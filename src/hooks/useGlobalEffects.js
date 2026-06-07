@@ -34,6 +34,9 @@ export function useScrollReveal() {
 export function useChapterAccordion() {
   useEffect(() => {
     const chapters = document.querySelectorAll('.cs-content .chapter');
+    // Collect all chapter-dividers for accent colour lookup
+    const dividers = Array.from(document.querySelectorAll('.cs-content .chapter-divider'));
+
     chapters.forEach((chapter, i) => {
       if (chapter.dataset.accordion) return;
       chapter.dataset.accordion = '1';
@@ -42,17 +45,66 @@ export function useChapterAccordion() {
       const title = chapter.querySelector('.chapter-title');
       if (!label || !title) return;
 
-      // Build clickable header
+      // Get accent colour from preceding chapter-divider (index i-1) or wrap
+      const prevDivider = dividers[i - 1];
+      const accent = prevDivider?.style.getPropertyValue('--c')
+        || document.querySelector('.cs-project-summary-wrap')?.style.getPropertyValue('--c')
+        || '#FF6B35';
+
+      // ── Build header ──
       const header = document.createElement('div');
       header.className = 'ch-accordion-header';
-      header.appendChild(label.cloneNode(true));
-      header.appendChild(title.cloneNode(true));
+
+      // Big decorative number
+      const num = document.createElement('span');
+      num.className = 'ch-num';
+      num.textContent = String(i + 1).padStart(2, '0');
+
+      // Right side container
+      const right = document.createElement('div');
+      right.className = 'ch-header-right';
+
+      // Row 1: pill + gradient line + chevron
+      const row1 = document.createElement('div');
+      row1.className = 'ch-header-row1';
+
+      const pill = document.createElement('span');
+      pill.className = 'chapter-marker';
+      pill.style.setProperty('--c', accent);
+      pill.textContent = `Chapter 0${i + 1}`;
+
+      const line = document.createElement('span');
+      line.className = 'ch-divider-line';
+      line.style.setProperty('--c', accent);
+
       const chevron = document.createElement('span');
       chevron.className = 'ch-chevron';
       chevron.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
-      header.appendChild(chevron);
 
-      // Wrap remaining content in collapsible body
+      row1.appendChild(pill);
+      row1.appendChild(line);
+      row1.appendChild(chevron);
+
+      // Row 2: title + hook inline
+      const row2 = document.createElement('div');
+      row2.className = 'ch-header-row2';
+
+      const titleEl = title.cloneNode(true);
+
+      const hookEl = document.createElement('span');
+      hookEl.className = 'chapter-hook';
+      const hookSrc = label.querySelector('.chapter-hook');
+      hookEl.textContent = hookSrc ? hookSrc.textContent : '';
+
+      row2.appendChild(titleEl);
+      row2.appendChild(hookEl);
+
+      right.appendChild(row1);
+      right.appendChild(row2);
+      header.appendChild(num);
+      header.appendChild(right);
+
+      // ── Collapsible body ──
       const body = document.createElement('div');
       body.className = 'ch-body';
       const inner = document.createElement('div');
