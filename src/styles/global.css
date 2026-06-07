@@ -2371,7 +2371,7 @@
       letter-spacing: .09em;
       text-transform: uppercase;
       color: #fff;
-      background: var(--c);
+      background: var(--c, #666);
       border: none;
       border-radius: 0 0 8px 0;
       padding: 8px 20px;

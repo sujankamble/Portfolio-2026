@@ -41,7 +41,10 @@ export function useProjectSummaryTilt() {
       const x = (e.clientX - r.left) / r.width  - 0.5;
       const y = (e.clientY - r.top)  / r.height - 0.5;
       card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
-      card.style.boxShadow = `${-x * 10}px ${y * 8}px 32px rgba(0,0,0,.14)`;
+      const isLight = document.body.classList.contains('light-mode');
+      card.style.boxShadow = isLight
+        ? `${-x * 8}px ${y * 6}px 24px rgba(0,0,0,.10)`
+        : `${-x * 10}px ${y * 8}px 32px rgba(0,0,0,.18), 0 0 0 .5px rgba(255,255,255,.06), ${x * 8}px ${-y * 6}px 20px rgba(255,255,255,.04)`;
     };
     const onLeave = () => {
       card.style.transform = 'rotateY(0) rotateX(0)';
