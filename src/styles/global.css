@@ -1912,7 +1912,7 @@
 
     /* ── CHAPTER LABEL PILL DIVIDER ── */
     .chapter-divider {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 14px;
       margin: 0 0 72px;

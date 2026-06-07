@@ -37,7 +37,16 @@ export function useChapterAccordion() {
     // Collect all chapter-dividers for accent colour lookup
     const dividers = Array.from(document.querySelectorAll('.cs-content .chapter-divider'));
 
+    const PROCESS_LABELS = ['Discovery', 'Define', 'Develop', 'Deliver', 'Reflect'];
+
     chapters.forEach((chapter, i) => {
+      // The Brief (index 0) is always visible — not an accordion
+      if (i === 0) {
+        chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
+        chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
+        return;
+      }
+
       if (chapter.dataset.accordion) return;
       chapter.dataset.accordion = '1';
 
@@ -45,7 +54,7 @@ export function useChapterAccordion() {
       const title = chapter.querySelector('.chapter-title');
       if (!label || !title) return;
 
-      // Get accent colour from preceding chapter-divider (index i-1) or wrap
+      // Get accent colour from preceding chapter-divider or wrap
       const prevDivider = dividers[i - 1];
       const accent = prevDivider?.style.getPropertyValue('--c')
         || document.querySelector('.cs-project-summary-wrap')?.style.getPropertyValue('--c')
@@ -71,7 +80,7 @@ export function useChapterAccordion() {
       const pill = document.createElement('span');
       pill.className = 'chapter-marker';
       pill.style.setProperty('--c', accent);
-      pill.textContent = `Chapter 0${i + 1}`;
+      pill.textContent = PROCESS_LABELS[i - 1] || `Stage ${i}`;
 
       const line = document.createElement('span');
       line.className = 'ch-divider-line';
@@ -120,12 +129,7 @@ export function useChapterAccordion() {
       chapter.appendChild(header);
       chapter.appendChild(body);
 
-      // First chapter open by default
-      if (i === 0) {
-        chapter.classList.add('ch-open');
-        chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
-        chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
-      }
+      // All accordions start closed by default — no ch-open added
 
       header.addEventListener('click', () => {
         const isOpen = chapter.classList.toggle('ch-open');
