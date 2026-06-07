@@ -2355,6 +2355,12 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      border: .5px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    body.light-mode .cs-project-summary-wrap {
+      border-color: rgba(20,44,73,0.10);
     }
     .cs-summary-tab {
       display: inline-flex;
@@ -2382,9 +2388,9 @@
       margin: 0;
       width: 100%;
       padding: 40px 48px;
-      border: .5px solid rgba(255,255,255,.08);
-      border-radius: 16px;
-      overflow: hidden;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
       background: rgba(255,255,255,.025);
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -2559,8 +2565,8 @@
     /* Light mode */
     body.light-mode .cs-project-summary {
       background: #FFFFFF;
-      border: .5px solid rgba(20,44,73,0.10);
-      border-radius: 16px;
+      border: none;
+      border-radius: 0;
     }
 
     body.light-mode .cps-label { color: rgba(20,44,73,0.38); }
