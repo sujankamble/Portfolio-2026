@@ -31,6 +31,31 @@ export function useScrollReveal() {
   }, []);
 }
 
+export function useProjectSummaryTilt() {
+  useEffect(() => {
+    const wrap = document.querySelector('.cs-project-summary-wrap');
+    const card = document.querySelector('.cs-project-summary');
+    if (!wrap || !card) return;
+    const onMove = e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+      card.style.boxShadow = `${-x * 10}px ${y * 8}px 32px rgba(0,0,0,.14)`;
+    };
+    const onLeave = () => {
+      card.style.transform = 'rotateY(0) rotateX(0)';
+      card.style.boxShadow = 'none';
+    };
+    wrap.addEventListener('mousemove', onMove);
+    wrap.addEventListener('mouseleave', onLeave);
+    return () => {
+      wrap.removeEventListener('mousemove', onMove);
+      wrap.removeEventListener('mouseleave', onLeave);
+    };
+  }, []);
+}
+
 export function useCursor() {
   useEffect(() => {
     const cursor = document.getElementById('cursor');
