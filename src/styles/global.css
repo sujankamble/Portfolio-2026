@@ -1921,19 +1921,18 @@
     }
     .chapter-marker {
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--c, #FF6B35);
       white-space: nowrap;
       font-family: "DM Sans", sans-serif;
-      padding: 4px 14px;
-      border: 1px solid var(--c, #FF6B35);
+      padding: 5px 16px;
+      border: 1.5px solid var(--c, #FF6B35);
       border-radius: 100px;
-      background: rgba(var(--cr, 255,107,53), 0.12);
+      background: transparent;
       opacity: 1;
       flex-shrink: 0;
-      text-shadow: 0 0 12px rgba(var(--cr, 255,107,53), 0.4);
     }
 
     /* ── BACK TO TOP BUTTON ── */
