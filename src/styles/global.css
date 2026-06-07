@@ -962,8 +962,8 @@
     .chapter:last-of-type{border-bottom:none;}
 
     /* ── CHAPTER ACCORDION ── */
-    .ch-accordion-header{display:flex;align-items:flex-start;gap:20px;cursor:pointer;padding:28px 0 24px;border-bottom:.5px solid rgba(255,255,255,.06);transition:border-color .2s;user-select:none;}
-    .ch-accordion-header:hover{border-bottom-color:rgba(255,255,255,.18);}
+    .ch-accordion-header{display:flex;align-items:flex-start;gap:20px;cursor:pointer;padding:28px 0 24px;border-bottom:none;user-select:none;}
+    .ch-accordion-header:hover .ch-num{color:rgba(255,255,255,.14);}
     .ch-num{font-size:72px;font-weight:700;line-height:1;color:rgba(255,255,255,.08);flex-shrink:0;letter-spacing:-.04em;font-family:"DM Serif Display",serif;margin-top:-4px;}
     .ch-header-right{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0;}
     .ch-header-row1{display:flex;align-items:center;gap:14px;width:100%;}
@@ -978,8 +978,8 @@
     .ch-body-inner{overflow:hidden;padding-top:0;transition:padding-top .35s ease;}
     .ch-open .ch-body-inner{padding-top:32px;}
     body.light-mode .ch-num{color:rgba(20,44,73,.07);}
-    body.light-mode .ch-accordion-header{border-bottom-color:rgba(20,44,73,.08);}
-    body.light-mode .ch-accordion-header:hover{border-bottom-color:rgba(20,44,73,.22);}
+    body.light-mode .ch-accordion-header{border-bottom:none;}
+    body.light-mode .ch-accordion-header:hover .ch-num{color:rgba(20,44,73,.12);}
     .chapter-label{margin-bottom:8px;}
     .chapter-hook{font-size:12px;font-weight:400;color:var(--orange);letter-spacing:.02em;font-style:italic;}
     .chapter-title{font-family:"DM Serif Display",serif;font-size:28px;font-weight:400;letter-spacing:-.01em;line-height:1.2;color:var(--ink);margin-bottom:24px;}

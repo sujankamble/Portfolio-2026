@@ -38,6 +38,7 @@ export function useChapterAccordion() {
     const dividers = Array.from(document.querySelectorAll('.cs-content .chapter-divider'));
 
     const PROCESS_LABELS = ['Discovery', 'Define', 'Develop', 'Deliver', 'Reflect'];
+    let accordionIndex = 0;
 
     chapters.forEach((chapter, i) => {
       // The Brief (index 0) is always visible — not an accordion
@@ -64,10 +65,12 @@ export function useChapterAccordion() {
       const header = document.createElement('div');
       header.className = 'ch-accordion-header';
 
-      // Big decorative number
+      accordionIndex++;
+
+      // Big decorative number (starts at 01 for first accordion)
       const num = document.createElement('span');
       num.className = 'ch-num';
-      num.textContent = String(i + 1).padStart(2, '0');
+      num.textContent = String(accordionIndex).padStart(2, '0');
 
       // Right side container
       const right = document.createElement('div');
@@ -99,6 +102,8 @@ export function useChapterAccordion() {
       row2.className = 'ch-header-row2';
 
       const titleEl = title.cloneNode(true);
+      titleEl.classList.remove('reveal', 'reveal-left', 'reveal-scale');
+      titleEl.classList.add('visible');
 
       const hookEl = document.createElement('span');
       hookEl.className = 'chapter-hook';
