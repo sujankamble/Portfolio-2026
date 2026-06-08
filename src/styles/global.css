@@ -1019,14 +1019,17 @@
 
     /* PAGINATION */
     .cs-pagination{display:flex;justify-content:space-between;align-items:stretch;gap:16px;padding-top:48px;margin-top:48px;border-top:.5px solid var(--border);}
-    .cs-pag-btn{display:flex;flex-direction:column;gap:6px;text-decoration:none;padding:20px 24px;border-radius:12px;border:1px solid var(--border);background:var(--surface2);transition:border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;cursor:none;flex:1;}
+    .cs-pag-btn{display:flex;flex-direction:column;gap:6px;text-decoration:none;padding:20px 24px;border-radius:12px;border:1px solid rgba(255,107,53,.22);background:var(--surface2);box-shadow:0 4px 16px -10px rgba(255,107,53,.18);transition:border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;cursor:none;flex:1;}
     .cs-pag-btn:hover{border-color:var(--orange);background:var(--surface);transform:translateY(-3px);box-shadow:0 12px 28px -8px rgba(255,107,53,.28);}
     .cs-pag-btn:hover .pag-name{color:var(--ink);}
     .cs-pag-btn-next{text-align:right;}
-    .pag-dir{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);transition:color .25s ease,transform .25s ease;}
-    .cs-pag-btn:not(.cs-pag-btn-next):hover .pag-dir{color:var(--orange);transform:translateX(-3px);}
-    .cs-pag-btn-next:hover .pag-dir{color:var(--orange);transform:translateX(3px);}
+    .pag-dir{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);opacity:.75;transition:color .25s ease,opacity .25s ease,transform .25s ease;}
+    .cs-pag-btn:hover .pag-dir{opacity:1;}
+    .cs-pag-btn:not(.cs-pag-btn-next):hover .pag-dir{transform:translateX(-3px);}
+    .cs-pag-btn-next:hover .pag-dir{transform:translateX(3px);}
     .pag-name{font-size:15px;font-weight:600;color:var(--ink2);transition:color .25s ease;}
+
+    body.light-mode .cs-pag-btn{border-color:rgba(255,107,53,.3);box-shadow:0 4px 16px -10px rgba(255,107,53,.14);}
 
     /* PASSWORD MODAL */
     
