@@ -959,7 +959,7 @@
     @media(min-width:1280px){.cs-layout{padding-left:220px;}}
 
     /* ── CASE STUDY SIDE NAV ── */
-    .cs-sidenav{position:fixed;left:0;top:50%;transform:translateY(-50%);width:180px;display:flex;flex-direction:column;gap:2px;padding:20px 16px;opacity:0;pointer-events:none;transition:opacity .4s ease;z-index:100;}
+    .cs-sidenav{position:fixed;left:0;top:50%;transform:translateY(-50%);width:180px;display:flex;flex-direction:column;gap:2px;padding:20px 16px;opacity:0;pointer-events:none;transition:opacity .4s ease;z-index:100;border:none;}
     .cs-sidenav--visible{opacity:1;pointer-events:all;}
     .cs-sidenav-item{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink3);font-size:12px;font-weight:400;font-family:"DM Sans",sans-serif;transition:color .2s,background .2s;cursor:pointer;}
     .cs-sidenav-item:hover{color:var(--ink);background:rgba(255,255,255,.04);}
