@@ -36,15 +36,19 @@
     body.light-mode nav {
       border-bottom-color: rgba(20,44,73,0.08);
     }
-    body.light-mode nav.scrolled,
-    body.light-mode nav.solid {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom-color: rgba(20,44,73,0.10);
-      box-shadow: 0 1px 12px rgba(20,44,73,0.06);
+    body.light-mode .nav-links {
+      background: rgba(255,255,255,0.55);
+      border-color: rgba(20,44,73,0.12);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      box-shadow: 0 8px 32px rgba(20,44,73,0.10);
     }
-    body.light-mode .nav-links { background: rgba(20,44,73,0.05); border-color: rgba(20,44,73,0.12); }
+    body.light-mode nav.scrolled .nav-links,
+    body.light-mode nav.solid .nav-links {
+      background: rgba(255,255,255,0.72);
+      border-color: rgba(20,44,73,0.14);
+      box-shadow: 0 8px 32px rgba(20,44,73,0.14);
+    }
     body.light-mode .nav-name-pill { color: rgba(20,44,73,0.90); }
     body.light-mode .nav-name-pill:hover { color: #142C49; }
     body.light-mode .nav-pill-sep { background: rgba(20,44,73,0.12); }
@@ -808,12 +812,11 @@
     .cursor-ring.hovering{width:46px;height:46px;border-color:rgba(255,107,53,0.7);}
 
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:64px;background:transparent;transition:background .4s,border-color .4s;border-bottom:.5px solid transparent;}
-    nav.scrolled{background:rgba(10,6,8,0.92);backdrop-filter:blur(14px);border-color:var(--border);}
-    nav.solid{background:rgba(10,6,8,0.92);backdrop-filter:blur(14px);border-color:var(--border);}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:64px;background:transparent;transition:border-color .4s;border-bottom:.5px solid transparent;}
     .nav-name{font-size:14px;font-weight:500;letter-spacing:-.02em;color:var(--ink);text-decoration:none;cursor:none;}
-    /* Desktop: centred pill containing all nav links */
-    .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:0;list-style:none;background:rgba(255,255,255,0.07);border:.5px solid rgba(255,255,255,0.12);border-radius:100px;padding:0 6px;height:44px;}
+    /* Desktop: centred floating pill containing all nav links — glassmorphism so it reads as a panel hovering over scrolling content */
+    .nav-links{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:0;list-style:none;background:rgba(255,255,255,0.07);border:.5px solid rgba(255,255,255,0.14);border-radius:100px;padding:0 6px;height:44px;backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:0 8px 32px rgba(0,0,0,0.18);transition:background .3s,border-color .3s,box-shadow .3s;}
+    nav.scrolled .nav-links,nav.solid .nav-links{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.16);box-shadow:0 8px 32px rgba(0,0,0,0.28);}
     .nav-links li{display:flex;align-items:center;}
     .nav-links a,.nav-link-btn{font-size:14px;font-weight:400;color:rgba(255,255,255,.72);text-decoration:none;transition:color .2s,background .2s;cursor:none;padding:0 18px;height:34px;display:flex;align-items:center;border-radius:100px;white-space:nowrap;}
     .nav-link-btn{background:none;border:none;font-family:inherit;cursor:pointer;}
