@@ -472,6 +472,41 @@
     body.light-mode .am-hero-left,
     body.light-mode .am-hero-right { border-color: rgba(20,44,73,0.10) !important; }
 
+    /* About page (.about-me-* — the markup actually rendered by AboutPage):
+       all of these are hardcoded to white-on-dark values for the default
+       theme, so light mode needs a full text/surface remap onto the --ink*
+       scale to stay AA-compliant on the white background (Guideline #5) */
+    body.light-mode .about-me-hero,
+    body.light-mode .about-me-stats,
+    body.light-mode .about-me-stat,
+    body.light-mode .about-me-section { border-color: rgba(20,44,73,.08) !important; }
+    body.light-mode .about-me-name { color: #142C49 !important; }
+    body.light-mode .about-me-title { color: rgba(20,44,73,.65) !important; }
+    body.light-mode .about-me-bio { color: rgba(20,44,73,.78) !important; }
+    body.light-mode .about-me-bio strong { color: #142C49 !important; }
+    body.light-mode .about-me-avail span { color: rgba(20,44,73,.55) !important; }
+    body.light-mode .about-me-photo { background: var(--surface) !important; border-color: rgba(20,44,73,.10) !important; }
+    body.light-mode .about-me-photo-label { color: rgba(20,44,73,.35) !important; }
+    body.light-mode .about-me-photo-icon svg { stroke: rgba(20,44,73,.3) !important; }
+    body.light-mode .about-me-photo-accent { background: linear-gradient(to top, rgba(255,255,255,.85), transparent) !important; }
+    body.light-mode .about-me-stat-num { color: #142C49 !important; }
+    body.light-mode .about-me-stat-label { color: rgba(20,44,73,.55) !important; }
+    body.light-mode .about-me-section-label { color: rgba(20,44,73,.40) !important; }
+    body.light-mode .about-me-section-label::after { background: rgba(20,44,73,.08) !important; }
+    body.light-mode .skill-card { background: rgba(20,44,73,.03) !important; border-color: rgba(20,44,73,.08) !important; }
+    body.light-mode .skill-card-title { color: #142C49 !important; }
+    body.light-mode .skill-card-desc { color: rgba(20,44,73,.62) !important; }
+    body.light-mode .tool-pill,
+    body.light-mode .industry-pill {
+      color: rgba(20,44,73,.70) !important;
+      border-color: rgba(20,44,73,.10) !important;
+      background: rgba(20,44,73,.03) !important;
+    }
+    body.light-mode .tool-pill:hover,
+    body.light-mode .industry-pill:hover { color: #2A6DFF !important; border-color: rgba(42,109,255,.3) !important; }
+    body.light-mode .resume-left h2 { color: #142C49 !important; }
+    body.light-mode .resume-left p { color: rgba(20,44,73,.62) !important; }
+
     /* ── DISCIPLINES SECTION ── */
     body.light-mode .disciplines-section { border-top-color: rgba(20,44,73,0.12); background: #F2F5FF; }
     body.light-mode .disciplines-label { color: rgba(20,44,73,0.50); }
