@@ -9,6 +9,10 @@
       --border:rgba(255,255,255,0.08); --orange:#FF6B35;
       --banking:#811c81; --banking2:#9b2d9b;
       --audit:#3a8a26; --nocode:#e69138; --mes:#0070c0;
+      /* RGB channel triples for the same case-accent hues — needed for
+         rgba(var(--x),alpha) tints (e.g. the Brief intro-card wash below) */
+      --banking-rgb:129,28,129; --banking2-rgb:155,45,155;
+      --audit-rgb:58,138,38; --nocode-rgb:230,145,56; --mes-rgb:0,112,192;
 
       /* ── GRID SYSTEM TOKENS ── desktop: 12-col, tablet: 8-col, mobile: 6 fat-col */
       --grid-columns: 12;
@@ -262,6 +266,12 @@
     body.light-mode .chapter-title { color: #142C49 !important; }
     body.light-mode .chapter-hook { color: rgba(20,44,73,0.72) !important; }
     body.light-mode .chapter-divider::after { opacity: 0.25; }
+    body.light-mode .chapter:first-of-type {
+      background:
+        linear-gradient(160deg, rgba(var(--case-cr,42,109,255),.04) 0%, rgba(var(--case-cr,42,109,255),.01) 50%, transparent 100%),
+        var(--surface);
+      border-color: rgba(var(--case-cr,42,109,255),.10);
+    }
     body.light-mode .chapter-marker {
       background: rgba(255,255,255,0.85) !important;
       border-color: currentColor !important;
@@ -1025,6 +1035,35 @@
     /* CHAPTERS */
     .chapter{margin-bottom:0;padding-bottom:0;border-bottom:none;scroll-margin-top:96px;}
     .chapter:last-of-type{border-bottom:none;}
+
+    /* "The Brief" — always-visible intro chapter (index 0, never an accordion).
+       Monochromatic tint of the case's own accent token (the --case-c/--case-cr
+       pair scoped per #case-* page below) layered over var(--surface) — same
+       gradient language as .cs-project-summary-wrap / .cs-pull-quote, so it
+       reads as a continuation of the hero band rather than a new color
+       introduced mid-page. Falls back to --orange if a page ID isn't matched. */
+    .chapter:first-of-type{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      padding:40px 44px;
+      background:
+        linear-gradient(160deg, rgba(var(--case-cr,255,107,53),.06) 0%, rgba(var(--case-cr,255,107,53),.015) 50%, transparent 100%),
+        var(--surface);
+      border:.5px solid rgba(var(--case-cr,255,107,53),.14);
+    }
+    .chapter:first-of-type::before{
+      content:'';
+      position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg, var(--case-c,var(--orange)), transparent 70%);
+      opacity:.5;
+    }
+    /* Per-case accent — reuses the existing :root color tokens (Guideline #1) */
+    #case-banking1 .chapter:first-of-type{ --case-c:var(--banking); --case-cr:var(--banking-rgb); }
+    #case-banking2 .chapter:first-of-type{ --case-c:var(--banking2); --case-cr:var(--banking2-rgb); }
+    #case-audit    .chapter:first-of-type{ --case-c:var(--audit);   --case-cr:var(--audit-rgb); }
+    #case-nocode   .chapter:first-of-type{ --case-c:var(--nocode);  --case-cr:var(--nocode-rgb); }
+    #case-mes      .chapter:first-of-type{ --case-c:var(--mes);     --case-cr:var(--mes-rgb); }
 
     /* ── CHAPTER ACCORDION ── */
     .ch-accordion-header{display:flex;align-items:flex-start;gap:20px;cursor:pointer;padding:28px 0 24px;border-bottom:none;user-select:none;}
@@ -3078,6 +3117,7 @@
       .cs-hero{padding:100px 24px 48px;}
       .cs-hero-intro{padding:32px 24px;}
       .cs-layout{padding:32px 24px 60px;}
+      .chapter:first-of-type{padding:28px 24px;}
       .cs-hero-title{font-size:clamp(30px,8vw,48px);}
       .cs-pagination{flex-direction:row;gap:10px;}
       .cs-pag-btn{padding:14px 16px;}
@@ -3118,6 +3158,7 @@
       /* Case study hero */
       .cs-hero{padding:90px 32px 48px;}
       .cs-layout{padding:40px 32px 60px;}
+      .chapter:first-of-type{padding:32px;}
       .cs-hero-intro{padding:32px 32px;}
 
       /* Case study process cards: 2 columns */
@@ -3168,6 +3209,7 @@
       .cs-hero{padding:80px 16px 40px;}
       .cs-hero-intro{padding:28px 16px;}
       .cs-layout{padding:32px 16px 48px;}
+      .chapter:first-of-type{padding:28px 24px;}
       .cs-hero-title{font-size:clamp(26px,7vw,42px);}
 
       /* Case study grids: all single column */
@@ -3217,6 +3259,7 @@
       .cs-hero{padding:72px 12px 32px;}
       .cs-hero-intro{padding:20px 12px;}
       .cs-layout{padding:24px 12px 40px;}
+      .chapter:first-of-type{padding:20px 18px;}
       .cs-hero-meta{grid-template-columns:1fr 1fr;}
       .ch-accordion-header{gap:10px;padding:18px 0 16px;}
       .ch-num{font-size:30px;}
