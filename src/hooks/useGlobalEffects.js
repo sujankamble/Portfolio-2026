@@ -233,13 +233,6 @@ export function useCaseSideNav() {
     nav.className = 'cs-sidenav';
     nav.setAttribute('aria-label', 'Page sections');
 
-    const track = document.createElement('div');
-    track.className = 'cs-sidenav-track';
-    const fill = document.createElement('div');
-    fill.className = 'cs-sidenav-fill';
-    track.appendChild(fill);
-    nav.appendChild(track);
-
     const chapters = Array.from(document.querySelectorAll('.cs-content .chapter'));
     const items = [];
 
@@ -296,7 +289,6 @@ export function useCaseSideNav() {
         item.classList.toggle('active', j === idx);
         item.classList.toggle('visited', j < idx);
       });
-      fill.style.height = `${(idx / Math.max(items.length - 1, 1)) * 100}%`;
     }
 
     let ticking = false;
