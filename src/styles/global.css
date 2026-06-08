@@ -929,7 +929,6 @@
     .cs-hero-inner{display:flex;flex-direction:row;align-items:flex-end;gap:40px;position:relative;z-index:2;width:100%;}
     .cs-hero-mockup-col{flex:0 0 58%;display:flex;align-items:flex-end;padding-top:60px;}
     .cs-hero-mockup{width:100%;height:auto;max-height:92vh;object-fit:contain;object-position:bottom;pointer-events:none;display:block;}
-    .cs-hero-bar{position:absolute;top:0;left:0;right:0;height:3px;}
     .cs-hero-content{flex:1;position:relative;z-index:2;max-width:420px;padding-bottom:8px;}
     .cs-hero-intro-text{font-size:13px;font-weight:300;color:var(--ink3);line-height:1.7;font-style:italic;margin-top:20px;padding:12px 14px;border-top:none;background:rgba(10,6,8,0.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:8px;}
     body.light-mode .cs-hero-intro-text{background:rgba(242,245,255,0.75);}
