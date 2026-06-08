@@ -39,6 +39,22 @@ export function useChapterAccordion() {
 
     const PROCESS_LABELS = ['Discovery', 'Define', 'Develop', 'Deliver', 'Reflect'];
     let accordionIndex = 0;
+    const accordionChapters = [];
+
+    const revealContents = chapter => {
+      chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
+      chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
+    };
+
+    // Exclusively open `target` — closes any other open accordion chapter first
+    const openChapter = target => {
+      accordionChapters.forEach(chapter => {
+        if (chapter !== target) chapter.classList.remove('ch-open');
+      });
+      target.classList.add('ch-open');
+      setTimeout(() => revealContents(target), 50);
+    };
+    const closeChapter = target => target.classList.remove('ch-open');
 
     chapters.forEach((chapter, i) => {
       // The Brief (index 0) is always visible — not an accordion
@@ -135,15 +151,16 @@ export function useChapterAccordion() {
       chapter.appendChild(body);
 
       // All accordions start closed by default — no ch-open added
+      accordionChapters.push(chapter);
+
+      // Expose exclusive open/close so other hooks (e.g. the side nav) can
+      // drive the same accordion without bypassing the single-open guarantee
+      chapter.openAccordion = () => openChapter(chapter);
+      chapter.closeAccordion = () => closeChapter(chapter);
 
       header.addEventListener('click', () => {
-        const isOpen = chapter.classList.toggle('ch-open');
-        if (isOpen) {
-          setTimeout(() => {
-            chapter.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => el.classList.add('visible'));
-            chapter.querySelectorAll('.stagger-child').forEach(el => el.classList.add('visible'));
-          }, 50);
-        }
+        if (chapter.classList.contains('ch-open')) closeChapter(chapter);
+        else openChapter(chapter);
       });
     });
   }, []);
@@ -244,7 +261,7 @@ export function useCaseSideNav() {
       item.addEventListener('click', e => {
         e.preventDefault();
         if (i > 0 && !chapter.classList.contains('ch-open')) {
-          chapter.querySelector('.ch-accordion-header')?.click();
+          chapter.openAccordion?.();
           setTimeout(() => chapter.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
         } else {
           chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });

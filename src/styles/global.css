@@ -975,7 +975,7 @@
     @media(max-width:1279px){.cs-sidenav{display:none;}}
 
     /* CHAPTERS */
-    .chapter{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+    .chapter{margin-bottom:0;padding-bottom:0;border-bottom:none;scroll-margin-top:96px;}
     .chapter:last-of-type{border-bottom:none;}
 
     /* ── CHAPTER ACCORDION ── */
