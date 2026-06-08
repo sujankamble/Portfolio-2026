@@ -274,15 +274,41 @@ export function useCaseSideNav() {
     // line in the viewport — the standard scrollspy approach, robust to any
     // section height.
     const REFERENCE_Y_FRACTION = 0.3;
+    const lastIdx = items.length - 1;
     let activeIdx = -1;
+    let terminalSignature = '';
+    let reachedBottom = false;
 
-    function updateActive() {
+    function recomputeActive() {
       const referenceY = window.innerHeight * REFERENCE_Y_FRACTION;
       let idx = 0;
       for (let j = 0; j < items.length; j++) {
         if (items[j].chapter.getBoundingClientRect().top <= referenceY) idx = j;
         else break;
       }
+
+      const lastOpen = items[lastIdx].chapter.classList.contains('ch-open');
+
+      // ── Terminal "completed" state ──
+      // Reached when the user has scrolled to the page bottom (pagination footer
+      // visible) OR closed the last chapter's accordion having reached it.
+      // - Last chapter still open  → behaves like the normal "on last section" state
+      //   (last = active, rest = visited).
+      // - Last chapter closed      → everything (including the last) shows visited,
+      //   signalling the journey is fully complete with nothing "current".
+      if (reachedBottom && idx === lastIdx) {
+        const signature = `terminal-${lastOpen}`;
+        if (signature === terminalSignature) return;
+        terminalSignature = signature;
+        activeIdx = idx;
+        items.forEach(({ item }, j) => {
+          item.classList.toggle('active', lastOpen && j === lastIdx);
+          item.classList.toggle('visited', j < lastIdx || (j === lastIdx && !lastOpen));
+        });
+        return;
+      }
+
+      terminalSignature = '';
       if (idx === activeIdx) return;
       activeIdx = idx;
       items.forEach(({ item }, j) => {
@@ -295,14 +321,44 @@ export function useCaseSideNav() {
     const onScroll = () => {
       if (ticking) return;
       ticking = true;
-      requestAnimationFrame(() => { updateActive(); ticking = false; });
+      requestAnimationFrame(() => { recomputeActive(); ticking = false; });
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    updateActive();
+
+    // ── "Reached the bottom" detection ──
+    // Observe the pagination/footer element so the terminal state engages as
+    // soon as the user scrolls to the end of the case study (bidirectional —
+    // scrolling back up un-sets it so normal scrollspy behavior resumes).
+    const pagination = document.querySelector('.cs-pagination');
+    let paginationObs;
+    if (pagination) {
+      paginationObs = new IntersectionObserver(([entry]) => {
+        reachedBottom = entry.isIntersecting;
+        recomputeActive();
+      }, { threshold: 0 });
+      paginationObs.observe(pagination);
+    }
+
+    // ── React to accordion open/close immediately ──
+    // Covers entry paths that don't produce a meaningful scroll delta (direct
+    // nav-item clicks, opening an accordion straight away, deep links, etc.)
+    // so active/visited always reflects true position regardless of how the
+    // user got there — including detecting "last chapter closed after being
+    // opened" for the terminal state above.
+    const accordionObs = new MutationObserver(muts => {
+      if (muts.some(m => m.attributeName === 'class')) recomputeActive();
+    });
+    items.forEach(({ chapter }) => {
+      accordionObs.observe(chapter, { attributes: true, attributeFilter: ['class'] });
+    });
+
+    recomputeActive();
 
     return () => {
       nav.remove();
       heroObs?.disconnect();
+      paginationObs?.disconnect();
+      accordionObs.disconnect();
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
