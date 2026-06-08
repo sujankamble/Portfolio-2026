@@ -279,7 +279,10 @@ export function useCaseSideNav() {
         if (entry.isIntersecting) {
           const idx = items.findIndex(({ chapter }) => chapter === entry.target);
           if (idx !== -1) {
-            items.forEach(({ item }, j) => item.classList.toggle('active', j === idx));
+            items.forEach(({ item }, j) => {
+              item.classList.toggle('active', j === idx);
+              item.classList.toggle('visited', j < idx);
+            });
             fill.style.height = `${(idx / Math.max(items.length - 1, 1)) * 100}%`;
           }
         }
