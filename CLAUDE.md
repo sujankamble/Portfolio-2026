@@ -50,7 +50,19 @@
    automation against the dev server unless the user explicitly authorizes it
    for that session. Verify changes via code reading and `git diff` review.
 
-9. **Git workflow.** Develop on the assigned feature branch
+9. **No horizontal overflow on narrow viewports.** Any flex/grid layout with
+   fixed-size or `flex-shrink:0` items (decorative numerals, pills, icons,
+   badges) next to text content must let the text content shrink/wrap
+   (`min-width:0` on the text's flex container, no `flex-shrink:0` on text
+   elements). This bit us in the case-study chapter accordions — `.ch-num`
+   (a 72px decorative numeral) sat beside `.chapter-title` with
+   `flex-shrink:0`, which forced the title to its single-line max-content
+   width and pushed the header past the viewport edge on mobile. When adding
+   or editing any component with mixed fixed/text content, scale the
+   fixed-size decorative elements down at the `768px`/`480px` breakpoints and
+   verify nothing forces the page wider than `100vw`.
+
+10. **Git workflow.** Develop on the assigned feature branch
    (`claude/nice-keller-hBADH` at time of writing), commit there, push, then
    merge into `main` and push `main` (this auto-triggers the GitHub Pages
    deploy via `.github/workflows/deploy.yml`). Never commit a fix directly to
@@ -80,6 +92,11 @@ each item (note any intentional exceptions in your summary to the user):
 - [ ] **No stray visual artifacts** — check for bleed-through borders/lines from
       fixed-position elements (nav, drawers, sticky bars) across all viewport widths
       and theme states (this bit us before with `.cs-hero-bar` and `.nav-mobile-drawer`)
+- [ ] **No horizontal overflow on mobile** — flex/grid rows mixing fixed-size
+      decorative elements (numerals, pills, icons) with text must let the text
+      shrink/wrap (`min-width:0`, no `flex-shrink:0` on text); scale fixed
+      elements down at `768px`/`480px` (this bit us with `.ch-num` vs
+      `.chapter-title` in the case-study accordions)
 - [ ] **Git workflow followed** — committed to the feature branch first, pushed,
       then merged to `main` and pushed (never the reverse)
 - [ ] **Verified via diff/code reading** — not via unauthorized browser automation
