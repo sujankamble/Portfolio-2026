@@ -287,23 +287,19 @@ export function useCaseSideNav() {
         else break;
       }
 
-      const lastOpen = items[lastIdx].chapter.classList.contains('ch-open');
-
       // ── Terminal "completed" state ──
-      // Reached when the user has scrolled to the page bottom (pagination footer
-      // visible) OR closed the last chapter's accordion having reached it.
-      // - Last chapter still open  → behaves like the normal "on last section" state
-      //   (last = active, rest = visited).
-      // - Last chapter closed      → everything (including the last) shows visited,
-      //   signalling the journey is fully complete with nothing "current".
-      if (reachedBottom && idx === lastIdx) {
-        const signature = `terminal-${lastOpen}`;
-        if (signature === terminalSignature) return;
-        terminalSignature = signature;
-        activeIdx = idx;
+      // Once the user has scrolled to the page bottom (pagination footer visible),
+      // unconditionally mark the last section as active and everything before it
+      // as visited — regardless of the scrollspy-computed idx (trailing collapsed
+      // chapters may not have crossed the reference line yet) and regardless of
+      // whether the last chapter's accordion is open or closed.
+      if (reachedBottom) {
+        if (terminalSignature === 'terminal') return;
+        terminalSignature = 'terminal';
+        activeIdx = lastIdx;
         items.forEach(({ item }, j) => {
-          item.classList.toggle('active', lastOpen && j === lastIdx);
-          item.classList.toggle('visited', j < lastIdx || (j === lastIdx && !lastOpen));
+          item.classList.toggle('active', j === lastIdx);
+          item.classList.toggle('visited', j < lastIdx);
         });
         return;
       }
