@@ -15,6 +15,20 @@
    `--grid-margin`). Never hardcode a color or container side-margin that already
    has a token. Add a `body.light-mode` override for any new color.
 
+   **Per-case accent backgrounds — monochromatic tint pattern.** When a case
+   study element needs a background/border tinted with that case's brand
+   accent (e.g. `.cs-project-summary-wrap`, `.cs-pull-quote`, the
+   `.chapter:first-of-type` "Brief" intro card), reuse the existing
+   `--banking`/`--banking2`/`--audit`/`--nocode`/`--mes` hex tokens and their
+   `*-rgb` triples (`--banking-rgb`, `--audit-rgb`, etc., `:root` ~line 12-14)
+   layered as `rgba(var(--x-rgb), low-alpha)` washes over `var(--surface)` —
+   a single-hue (monochromatic) tint progression, not a mix of adjacent hues.
+   Note `--c`/`--cr` set inline on `.cs-hero`/`.cs-project-summary-wrap` are
+   NOT inherited by `.chapter` (siblings, not ancestors) — to theme a chapter
+   element per case, scope a `--case-c`/`--case-cr` pair via the page ID
+   (`#case-audit .chapter:first-of-type{ --case-c:var(--audit); --case-cr:var(--audit-rgb); }`)
+   rather than relying on inline custom-property inheritance.
+
 2. **Grid system.** Page/section container horizontal padding should reference
    `var(--grid-margin)` so spacing scales automatically across breakpoints
    (12 columns desktop → 8 tablet → 6 "fat" columns mobile, switching at
