@@ -380,6 +380,17 @@
     /* Palette swatches */
     body.light-mode .swatch-label { color: rgba(20,44,73,0.55) !important; }
 
+    /* Rulebook before/after compare — the "old" side is intentionally a dark,
+       muted card (visual metaphor for the legacy process) in both themes, so
+       force light text on it rather than letting var(--ink)/var(--ink2) flip
+       to navy (illegible on a near-black card in light mode) */
+    body.light-mode .rulebook-side.old { background: rgba(20,12,18,.92) !important; border-color: rgba(255,255,255,.08) !important; }
+    body.light-mode .rulebook-side.old .rulebook-side-title { color: rgba(255,255,255,.92) !important; }
+    body.light-mode .rulebook-side.old .rulebook-points li { color: rgba(255,255,255,.66) !important; }
+    body.light-mode .rulebook-side.old .rulebook-points li::before { color: rgba(255,255,255,.28) !important; }
+    body.light-mode .rulebook-side.old .rulebook-side-label { color: rgba(255,255,255,.6) !important; }
+    body.light-mode .rulebook-side.old .rulebook-side-label::before { background: rgba(255,255,255,.28) !important; }
+
     /* Swimlane */
     body.light-mode .swimlane { background: #FFFFFF !important; border-color: rgba(20,44,73,0.10) !important; }
     body.light-mode .swimlane-header { border-bottom-color: rgba(20,44,73,0.10) !important; }
