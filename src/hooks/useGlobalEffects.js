@@ -274,27 +274,44 @@ export function useCaseSideNav() {
     }
 
     // ── Active section + progress ──
-    const sectionObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const idx = items.findIndex(({ chapter }) => chapter === entry.target);
-          if (idx !== -1) {
-            items.forEach(({ item }, j) => {
-              item.classList.toggle('active', j === idx);
-              item.classList.toggle('visited', j < idx);
-            });
-            fill.style.height = `${(idx / Math.max(items.length - 1, 1)) * 100}%`;
-          }
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '-15% 0px -60% 0px' });
+    // A ratio-threshold IntersectionObserver can't work here: chapter heights
+    // range from ~120px (collapsed accordions) to 1600px+ ("The Brief", always
+    // expanded), so no single threshold is ever crossed by every chapter.
+    // Instead, find the last chapter whose top has crossed a fixed reference
+    // line in the viewport — the standard scrollspy approach, robust to any
+    // section height.
+    const REFERENCE_Y_FRACTION = 0.3;
+    let activeIdx = -1;
 
-    items.forEach(({ chapter }) => sectionObs.observe(chapter));
+    function updateActive() {
+      const referenceY = window.innerHeight * REFERENCE_Y_FRACTION;
+      let idx = 0;
+      for (let j = 0; j < items.length; j++) {
+        if (items[j].chapter.getBoundingClientRect().top <= referenceY) idx = j;
+        else break;
+      }
+      if (idx === activeIdx) return;
+      activeIdx = idx;
+      items.forEach(({ item }, j) => {
+        item.classList.toggle('active', j === idx);
+        item.classList.toggle('visited', j < idx);
+      });
+      fill.style.height = `${(idx / Math.max(items.length - 1, 1)) * 100}%`;
+    }
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { updateActive(); ticking = false; });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateActive();
 
     return () => {
       nav.remove();
       heroObs?.disconnect();
-      sectionObs.disconnect();
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 }
