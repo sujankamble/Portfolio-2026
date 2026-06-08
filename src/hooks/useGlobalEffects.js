@@ -262,7 +262,11 @@ export function useCaseSideNav() {
         e.preventDefault();
         if (i > 0 && !chapter.classList.contains('ch-open')) {
           chapter.openAccordion?.();
-          setTimeout(() => chapter.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+          // Wait for the collapse/expand grid-template-rows transition (.45s,
+          // global.css ~994) to finish so any chapter above that's closing has
+          // fully settled — otherwise its shrinking height shifts the target
+          // chapter upward mid-scroll and the landing point drifts off the header.
+          setTimeout(() => chapter.scrollIntoView({ behavior: 'smooth', block: 'start' }), 480);
         } else {
           chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
