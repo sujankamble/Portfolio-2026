@@ -50,7 +50,7 @@ export default function NoCodePage() {
         imgs[cur].classList.add('active');
         dots[cur].classList.add('active');
       };
-      const start = () => { carouselTimer = setInterval(() => show(cur + 1), 4000); };
+      const start = () => { carouselTimer = setInterval(() => show(cur + 1), 6000); };
       const stop = () => clearInterval(carouselTimer);
       carousel.querySelector('.cs-carousel-prev').addEventListener('click', () => { stop(); show(cur - 1); start(); });
       carousel.querySelector('.cs-carousel-next').addEventListener('click', () => { stop(); show(cur + 1); start(); });
