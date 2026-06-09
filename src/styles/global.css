@@ -1152,6 +1152,7 @@
     .cs-artifact-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);}
     .cs-artifact img{width:100%;height:auto;object-fit:contain;border-radius:12px;display:block;}
     .cs-artifact img[src*=".gif"]{max-width:420px;margin:0 auto;}
+    .cs-artifact img[src*="Heuristic"]{max-width:72%;margin:0 auto;}
 
     /* PAGINATION */
     .cs-pagination{display:flex;justify-content:space-between;align-items:stretch;gap:16px;padding-top:48px;margin-top:48px;border-top:.5px solid var(--border);}
