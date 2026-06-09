@@ -76,13 +76,76 @@
    fixed-size decorative elements down at the `768px`/`480px` breakpoints and
    verify nothing forces the page wider than `100vw`.
 
-11. **No scroll-indicator elements in case studies.** The `cps-scroll-indicator` / `cps-scroll-pill` / `cps-scroll-arrow` component has been permanently removed from all case studies and its CSS deleted from `global.css`. Do **not** re-add it. When adding new case study pages or chapters, omit this element entirely — the custom cursor pill (`.cps-cursor`) on desktop and normal page scrolling on mobile are sufficient.
+10. **No scroll-indicator elements in case studies.** The `cps-scroll-indicator` / `cps-scroll-pill` / `cps-scroll-arrow` component has been permanently removed from all case studies and its CSS deleted from `global.css`. Do **not** re-add it. When adding new case study pages or chapters, omit this element entirely — the custom cursor pill (`.cps-cursor`) on desktop and normal page scrolling on mobile are sufficient.
 
-10. **Git workflow.** Develop on the assigned feature branch
-   (`claude/nice-keller-hBADH` at time of writing), commit there, push, then
-   merge into `main` and push `main` (this auto-triggers the GitHub Pages
-   deploy via `.github/workflows/deploy.yml`). Never commit a fix directly to
-   `main` first — always land it on the feature branch and merge forward.
+11. **Git workflow.** Develop on the assigned feature branch
+    (`claude/happy-faraday-r8hncd` at time of writing), commit there, push to
+    the feature branch, then push to `main` (`git push origin <branch>:main`).
+    This auto-triggers the GitHub Pages deploy via `.github/workflows/deploy.yml`.
+    Never commit a fix directly to `main` first — always land it on the feature
+    branch and merge forward.
+
+    **Verified commits.** Always ensure `git config user.email noreply@anthropic.com`
+    and `git config user.name Claude` are set before committing. If the stop-hook
+    reports unverified commits, run:
+    ```
+    git rebase --exec "git commit --amend --no-edit --reset-author" origin/<branch>
+    git push origin <branch> && git push origin <branch>:main --force
+    ```
+
+    **Push conflicts on main.** If `git push origin <branch>:main` is rejected
+    (403 / fetch first), run `git pull origin main --rebase` then retry the push.
+
+12. **No em dashes in user-facing copy.** Em dashes (—) are banned from all
+    rendered text across pages and case studies. Use a comma, colon, or rewrite
+    the sentence instead. The only exception is JS/CSS code comments which are
+    never rendered.
+
+---
+
+## Image Conventions
+
+### Case study artifact images (`cs-artifact` sections)
+Use this pattern to replace a placeholder with a real image:
+```html
+<div class="cs-artifact reveal">
+  <img src="/Portfolio-2026/images/Filename.png" alt="Description" class="cs-artifact-img" />
+</div>
+```
+- **Scale-down images** (e.g. evaluation screens, flow diagrams) use a targeted
+  `max-width` selector in `global.css`:
+  ```css
+  .cs-artifact img[src*="Keyword"]{max-width:72%;margin:0 auto;border:.5px solid rgba(255,255,255,.08);border-radius:0;}
+  body.light-mode .cs-artifact img[src*="Keyword"]{border-color:rgba(0,0,0,.12);}
+  ```
+- Do **not** apply `border-radius` to artifact images — it crops screenshot corners.
+
+### Dual-theme card images (`.dual-theme` / `.theme-card` sections)
+Use `.theme-img-wrap` + `.theme-img` — **not** the cs-artifact pattern:
+```html
+<div class="theme-img-wrap">
+  <img src="/Portfolio-2026/images/Filename.png" alt="Description" class="theme-img" />
+</div>
+```
+CSS rules (already in `global.css`):
+```css
+.theme-img-wrap { width:100%; aspect-ratio:4/3; display:flex; align-items:center;
+  justify-content:center; overflow:hidden; background:rgba(20,12,18,.5);
+  padding:16px; box-sizing:border-box; }
+.theme-img { width:100%; height:100%; object-fit:contain; object-position:center;
+  display:block; border-radius:0; border:.5px solid rgba(255,255,255,.12); }
+body.light-mode .theme-img-wrap { background:rgba(240,240,245,1); }
+body.light-mode .theme-img { border-color:rgba(0,0,0,.15); }
+```
+- `aspect-ratio:4/3` on the wrap keeps the card height consistent with the old placeholders.
+- `object-fit:contain` centres the image without cropping — never use `object-fit:cover` here.
+- The 16px padding on all sides gives the image breathing room within the card.
+
+### MES Application — hostile-split section (3-column layout)
+The `.hostile-split` grid uses **3 columns** at ≥1280px, 2 at 1025–1280px, 1 at ≤1024px.
+Three card variants exist: `.hostile-side.before` (red tint), `.hostile-side.pillars` (dark),
+`.hostile-side.after` (blue tint). Their list item components are `.mes-before-item` and
+`.mes-after-item` respectively — do not mix these classes.
 
 ---
 
@@ -113,8 +176,13 @@ each item (note any intentional exceptions in your summary to the user):
       shrink/wrap (`min-width:0`, no `flex-shrink:0` on text); scale fixed
       elements down at `768px`/`480px` (this bit us with `.ch-num` vs
       `.chapter-title` in the case-study accordions)
+- [ ] **No em dashes in rendered copy** — use commas or colons instead
+- [ ] **Images not corner-cropped** — do not apply `border-radius` to screenshot/
+      artifact images; set `border-radius:0` explicitly if overriding a base rule
+- [ ] **Git author verified** — commits use `noreply@anthropic.com`; fix with
+      rebase `--reset-author` if the stop-hook flags unverified commits
 - [ ] **Git workflow followed** — committed to the feature branch first, pushed,
-      then merged to `main` and pushed (never the reverse)
+      then pushed to `main` (never the reverse)
 - [ ] **Verified via diff/code reading** — not via unauthorized browser automation
 
 ---
@@ -124,3 +192,4 @@ each item (note any intentional exceptions in your summary to the user):
 - `DESIGN_SYSTEM.md` — colors, typography, spacing, component naming, file structure
 - `src/styles/global.css` — all tokens (`:root`, `body.light-mode`) and styles live here
 - `src/hooks/useGlobalEffects.js` — scroll reveal, accordion, side-nav, cursor effects
+
