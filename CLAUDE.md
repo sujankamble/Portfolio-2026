@@ -76,6 +76,8 @@
    fixed-size decorative elements down at the `768px`/`480px` breakpoints and
    verify nothing forces the page wider than `100vw`.
 
+11. **No scroll-indicator elements in case studies.** The `cps-scroll-indicator` / `cps-scroll-pill` / `cps-scroll-arrow` component has been permanently removed from all case studies and its CSS deleted from `global.css`. Do **not** re-add it. When adding new case study pages or chapters, omit this element entirely — the custom cursor pill (`.cps-cursor`) on desktop and normal page scrolling on mobile are sufficient.
+
 10. **Git workflow.** Develop on the assigned feature branch
    (`claude/nice-keller-hBADH` at time of writing), commit there, push, then
    merge into `main` and push `main` (this auto-triggers the GitHub Pages
