@@ -1162,8 +1162,8 @@
     body.light-mode .cs-carousel-img{border-color:rgba(0,0,0,.12);}
     .cs-carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:.5px solid rgba(255,255,255,.15);background:rgba(20,12,18,.7);color:var(--ink2);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:background .2s,border-color .2s;}
     .cs-carousel-btn:hover{background:rgba(0,112,192,.15);border-color:rgba(0,112,192,.4);color:var(--ink);}
-    .cs-carousel-prev{left:-18px;}
-    .cs-carousel-next{right:-18px;}
+    .cs-carousel-prev{left:12px;}
+    .cs-carousel-next{right:12px;}
     body.light-mode .cs-carousel-btn{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.15);color:var(--ink2);}
     body.light-mode .cs-carousel-btn:hover{background:rgba(0,112,192,.08);border-color:rgba(0,112,192,.3);}
     .cs-carousel-dots{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;}
