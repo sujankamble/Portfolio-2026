@@ -1154,6 +1154,9 @@
     .cs-artifact img[src*=".gif"]{max-width:420px;margin:0 auto;}
     .cs-artifact img[src*="Heuristic"],.cs-artifact img[src*="Task"]{max-width:72%;margin:0 auto;border:.5px solid rgba(255,255,255,.08);border-radius:0;}
     body.light-mode .cs-artifact img[src*="Heuristic"],body.light-mode .cs-artifact img[src*="Task"]{border-color:rgba(0,0,0,.12);}
+    .theme-img-wrap{display:flex;justify-content:center;}
+    .theme-img{max-width:72%;height:auto;display:block;border:.5px solid rgba(255,255,255,.08);border-radius:0;}
+    body.light-mode .theme-img{border-color:rgba(0,0,0,.12);}
 
     /* PAGINATION */
     .cs-pagination{display:flex;justify-content:space-between;align-items:stretch;gap:16px;padding-top:48px;margin-top:48px;border-top:.5px solid var(--border);}
