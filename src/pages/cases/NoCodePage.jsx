@@ -37,7 +37,6 @@ export default function NoCodePage() {
     };
     document.addEventListener('click', handler);
 
-    let carouselTimer;
     const carousel = document.getElementById('nocode-carousel');
     if (carousel) {
       const imgs = carousel.querySelectorAll('.cs-carousel-img');
@@ -50,14 +49,9 @@ export default function NoCodePage() {
         imgs[cur].classList.add('active');
         dots[cur].classList.add('active');
       };
-      const start = () => { carouselTimer = setInterval(() => show(cur + 1), 6000); };
-      const stop = () => clearInterval(carouselTimer);
-      carousel.querySelector('.cs-carousel-prev').addEventListener('click', () => { stop(); show(cur - 1); start(); });
-      carousel.querySelector('.cs-carousel-next').addEventListener('click', () => { stop(); show(cur + 1); start(); });
-      dots.forEach((d, i) => d.addEventListener('click', () => { stop(); show(i); start(); }));
-      carousel.addEventListener('mouseenter', stop);
-      carousel.addEventListener('mouseleave', start);
-      start();
+      carousel.querySelector('.cs-carousel-prev').addEventListener('click', () => show(cur - 1));
+      carousel.querySelector('.cs-carousel-next').addEventListener('click', () => show(cur + 1));
+      dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
     }
 
     let researchCarouselTimer;
@@ -83,7 +77,7 @@ export default function NoCodePage() {
       start();
     }
 
-    return () => { document.removeEventListener('click', handler); clearInterval(carouselTimer); clearInterval(researchCarouselTimer); };
+    return () => { document.removeEventListener('click', handler); clearInterval(researchCarouselTimer); };
   }, [navigate]);
 
   return (
