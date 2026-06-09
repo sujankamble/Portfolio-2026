@@ -2706,12 +2706,12 @@
       border-radius: 0;
     }
 
-    body.light-mode .cps-label { color: rgba(20,44,73,0.38); }
+    body.light-mode .cps-label { color: rgba(20,44,73,0.70); }
     body.light-mode .cps-heading { color: #142C49; }
-    body.light-mode .cps-body { color: rgba(20,44,73,0.62); }
-    body.light-mode .cps-tag { border-color: rgba(20,44,73,0.12); color: rgba(20,44,73,0.50); }
+    body.light-mode .cps-body { color: rgba(20,44,73,0.75); }
+    body.light-mode .cps-tag { border-color: rgba(20,44,73,0.22); color: rgba(20,44,73,0.70); }
     body.light-mode .cps-outcome-val { color: #142C49; }
-    body.light-mode .cps-outcome-desc { color: rgba(20,44,73,0.55); }
+    body.light-mode .cps-outcome-desc { color: rgba(20,44,73,0.70); }
 
     @media(max-width:900px) {
       .cs-project-summary { grid-template-columns: 1fr 1fr; gap: 28px 0; }
