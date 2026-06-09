@@ -2664,9 +2664,6 @@
       padding-top: 24px;
       border-top: .5px solid rgba(255,255,255,.06);
     }
-    @media (hover: none) {
-      .cps-scroll-indicator { display: flex; }
-    }
     .cps-scroll-pill {
       display: inline-flex;
       align-items: center;
