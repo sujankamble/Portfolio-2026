@@ -1152,7 +1152,7 @@
     .cs-artifact-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);}
     .cs-artifact img{width:100%;height:auto;object-fit:contain;border-radius:12px;display:block;}
     .cs-artifact img[src*=".gif"]{max-width:420px;margin:0 auto;}
-    .cs-artifact img[src*="Heuristic"],.cs-artifact img[src*="Task"]{max-width:72%;margin:0 auto;border:.5px solid rgba(255,255,255,.08);border-radius:14px;}
+    .cs-artifact img[src*="Heuristic"],.cs-artifact img[src*="Task"]{max-width:72%;margin:0 auto;border:.5px solid rgba(255,255,255,.08);border-radius:0;}
     body.light-mode .cs-artifact img[src*="Heuristic"],body.light-mode .cs-artifact img[src*="Task"]{border-color:rgba(0,0,0,.12);}
 
     /* PAGINATION */
