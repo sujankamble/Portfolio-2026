@@ -2654,48 +2654,7 @@
     }
     .cps-outcome-item {}
 
-    /* ── Scroll indicator — hidden desktop (custom cursor handles it), visible mobile ── */
-    .cps-scroll-indicator {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: .5px solid rgba(255,255,255,.06);
-    }
-    .cps-scroll-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      border-radius: 100px;
-      background: rgba(129,28,129,.12);
-      border: .5px solid rgba(129,28,129,.30);
-      pointer-events: none;
-      user-select: none;
-    }
-    .cps-scroll-pill span {
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: .04em;
-      color: rgba(129,28,129,.90);
-      font-family: "DM Sans", sans-serif;
-    }
-    body.light-mode .cps-scroll-pill {
-      background: rgba(129,28,129,.07);
-      border-color: rgba(129,28,129,.25);
-    }
-    body.light-mode .cps-scroll-pill span { color: rgba(100,20,100,.85); }
-    .cps-scroll-arrow {
-      display: inline-block;
-      animation: cps-bounce 1.6s ease-in-out infinite;
-    }
-    @keyframes cps-bounce {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(4px); }
-    }
-    body.light-mode .cps-scroll-indicator { border-top-color: rgba(20,44,73,.08); }
+
 
     @media(max-width:768px) {
       .cs-project-summary-wrap { margin: 32px 24px 0; }
