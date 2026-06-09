@@ -109,7 +109,7 @@ export default function Hero() {
           people <em>understand.</em>
         </h1>
         <p className="hero-sub">
-          Research-led design for high-stakes domains — finance, banking, pharma, and insurance. Where clarity isn't optional.
+          Research-led design for high-stakes domains: finance, banking, pharma, and insurance. Where clarity isn't optional.
         </p>
         <div className="hero-tagline">
           <div className="hero-tagline-line"></div>
