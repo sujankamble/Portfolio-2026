@@ -3549,21 +3549,3 @@
       .resume-print-btn{ width:100%; justify-content:center; }
     }
 
-    /* ── PRINT / PDF EXPORT ── */
-    @media print{
-      body *{ visibility:hidden; cursor:auto !important; }
-      .resume-page, .resume-page *{ visibility:visible; }
-      .resume-page{ position:absolute; inset:0; padding:16px; background:#fff !important; }
-      .resume-actions{ display:none !important; }
-      .resume-grid{ border-color:#ccc !important; grid-template-columns:240px 1fr; }
-      .resume-side{ background:#f7f7f7 !important; border-color:#ccc !important; }
-      .resume-name, .resume-job-role{ color:#111 !important; }
-      .resume-side-item-title, .resume-bullets li, .resume-stat-num{ color:#222 !important; }
-      .resume-subtitle, .resume-side-item-meta, .resume-side-item-date, .resume-job-dates, .resume-stat-label{ color:#555 !important; }
-      .resume-tag, .resume-job-org{ color:#444 !important; }
-      .resume-chip, .resume-stat{ background:#f2f2f2 !important; border-color:#ccc !important; }
-      .resume-side-item, .resume-job{ border-color:#ddd !important; }
-      .resume-stat-up .resume-stat-num, .resume-stat-down .resume-stat-num{ color:#222 !important; }
-      .cursor, .cursor-ring, #nav, .nav-mobile-drawer, .dot-grid-fade{ display:none !important; }
-    }
-  

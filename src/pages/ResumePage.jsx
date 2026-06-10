@@ -5,10 +5,10 @@ const RESUME_HTML = `
   <div class="resume-shell reveal">
 
     <div class="resume-actions">
-      <button class="resume-print-btn" id="resumePrintBtn" type="button" aria-label="Download resume as PDF">
+      <a class="resume-print-btn" href="https://drive.google.com/file/d/1w5145HGqGlXfQcdYRWBkdDrXRzgoUhUM/view?usp=drive_link" target="_blank" rel="noreferrer" aria-label="Download resume as PDF">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Download PDF
-      </button>
+      </a>
     </div>
 
     <div class="resume-grid">
@@ -180,14 +180,6 @@ export default function ResumePage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
-
-  useEffect(() => {
-    const btn = document.getElementById('resumePrintBtn');
-    if (!btn) return;
-    const onClick = () => window.print();
-    btn.addEventListener('click', onClick);
-    return () => btn.removeEventListener('click', onClick);
   }, []);
 
   return (
