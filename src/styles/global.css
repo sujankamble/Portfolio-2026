@@ -2911,6 +2911,7 @@
     .testimonials-section {
       padding: 72px var(--grid-margin) 100px;
       border-top: .5px solid rgba(255,255,255,.06);
+      background: var(--surface);
     }
     .testimonials-label {
       font-size: 11px;
