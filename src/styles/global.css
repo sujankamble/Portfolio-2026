@@ -521,6 +521,7 @@
     @media(max-width:768px){
       .cs-hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
       .cs-meta-pill { padding: 10px 12px; }
+      #case-nocode .cs-meta-pill:last-child { grid-column: 1 / -1; }
     }
 
 
