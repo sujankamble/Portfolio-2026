@@ -3057,6 +3057,7 @@
       padding: 40px 0;
       border-top: .5px solid rgba(255,255,255,.06);
       border-bottom: .5px solid rgba(255,255,255,.06);
+      background: var(--surface);
       overflow: hidden;
     }
     .skills-ribbon-label {
@@ -3081,8 +3082,8 @@
       z-index: 2;
       pointer-events: none;
     }
-    .skills-ribbon-track::before { left: 0; background: linear-gradient(to right, #0a0608, transparent); }
-    .skills-ribbon-track::after  { right: 0; background: linear-gradient(to left, #0a0608, transparent); }
+    .skills-ribbon-track::before { left: 0; background: linear-gradient(to right, var(--surface), transparent); }
+    .skills-ribbon-track::after  { right: 0; background: linear-gradient(to left, var(--surface), transparent); }
     .skills-ribbon {
       display: flex;
       gap: 10px;
@@ -3101,7 +3102,7 @@
       padding: 8px 18px;
       border-radius: 100px;
       border: .5px solid rgba(255,255,255,.1);
-      background: rgba(20,12,18,.85);
+      background: var(--surface2);
       font-size: 12px;
       font-weight: 400;
       color: rgba(255,255,255,.75);
