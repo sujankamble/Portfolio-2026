@@ -65,7 +65,7 @@ export default function Hero() {
   useEffect(() => {
     const container = document.getElementById('wordShuffle');
     if (!container) return;
-    const words = ['experiences', 'clarity', 'systems', 'decisions'];
+    const words = ['UX', 'Product', 'Experience', 'Interaction'];
     let idx = 0, busy = false;
     const STAGGER_OUT = 28, STAGGER_IN = 52, OUT_DUR = 180, IN_DUR = 240, GAP = 60, HOLD = 3000;
 
@@ -101,23 +101,29 @@ export default function Hero() {
       <div className="hero-glow"></div>
       <div className="hero-arc"></div>
       <div className="hero-arc-2"></div>
-      <div className="hero-content">
-        <p className="hero-eyebrow">Lead UX Designer · 13+ years</p>
-        <h1 className="hero-heading">
-          Turning complex<br/>
-          systems into <span className="word-shuffle" id="wordShuffle"></span><br/>
-          people <em>understand.</em>
+      <div className="hero-content hero-center">
+        <h1 className="hero-heading hero-heading-center">
+          Hey, I'm <img src="/Portfolio-2026/images/Hero_profile.png" alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
+          A <span className="word-shuffle" id="wordShuffle"></span> Designer <img src="/Portfolio-2026/images/Hero_nature1.png" alt="" className="hero-inline-img" /><img src="/Portfolio-2026/images/Hero_nature2.png" alt="" className="hero-inline-img" /><br/>
+          turning complex systems into things people <em>understand</em>
         </h1>
-        <p className="hero-sub">
-          Research-led design for high-stakes domains: finance, banking, pharma, and insurance. Where clarity isn't optional.
+        <p className="hero-sub hero-sub-center">
+          Research-led design for high-stakes domains: finance, banking, pharma, and insurance.
         </p>
-        <div className="hero-tagline">
-          <div className="hero-tagline-line"></div>
-          <div>
-            <p><span>13 years</span> of working where the problems are hardest.</p>
-            <p><span>Research</span> shapes every decision.</p>
-            <p>The <span>user's reality</span> is always the starting point.</p>
-          </div>
+        <div className="lets-talk-ctas hero-ctas">
+          <a href="http://linkedin.com/in/sujan-kamble-02393930" target="_blank" rel="noreferrer" className="avail-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:sujankamble@gmail.com" className="avail-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+          <span className="avail-cta avail-cta-tooltip" tabIndex="0" aria-label="Mobile: 9890936926">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Mobile
+            <span className="avail-cta-tooltip-text">9890936926</span>
+          </span>
         </div>
         <button className="hero-scroll-hint" onClick={scrollToWork} aria-label="Scroll to work">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
