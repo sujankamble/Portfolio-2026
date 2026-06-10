@@ -48,7 +48,7 @@ export default function Banking1Page() {
         cur = (n + imgs.length) % imgs.length;
         imgs[cur].classList.add('active'); dots[cur].classList.add('active');
       };
-      const start = () => { banking1DefineTimer = setInterval(() => show(cur + 1), 4000); };
+      const start = () => { banking1DefineTimer = setInterval(() => show(cur + 1), 10000); };
       const stop = () => clearInterval(banking1DefineTimer);
       banking1Define.querySelector('.cs-carousel-prev').addEventListener('click', () => { stop(); show(cur - 1); start(); });
       banking1Define.querySelector('.cs-carousel-next').addEventListener('click', () => { stop(); show(cur + 1); start(); });
