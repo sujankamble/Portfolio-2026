@@ -2016,6 +2016,8 @@
     .wf-final-placeholder span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.15);}
 
     /* ── NOCODE: KEY LEARNINGS ── */
+    .cs-subsection-bg{background:var(--surface);border:.5px solid var(--border);border-radius:14px;padding:24px;margin-top:28px;}
+    .cs-subsection-bg .nocode-learnings{margin:0;}
     .nocode-learnings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0;}
     .nocode-learning-card{padding:22px 20px;background:rgba(230,145,56,.06);border:.5px solid rgba(230,145,56,.2);border-radius:12px;}
     .nocode-learning-icon{width:36px;height:36px;border-radius:8px;background:rgba(230,145,56,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
