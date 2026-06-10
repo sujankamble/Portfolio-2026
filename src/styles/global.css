@@ -3038,7 +3038,7 @@
     }
     .lets-talk-inner {
       max-width: 680px;
-      margin: 0 auto 320px;
+      margin: 0 auto 360px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -3058,6 +3058,11 @@
     .lets-talk-inner .avail-text { color: rgba(255,255,255,.85); }
     .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; }
     .lets-talk-inner .avail-cta:hover { border-color: var(--orange); color: var(--orange) !important; background: rgba(255,107,53,.10); }
+    body.light-mode .lets-talk-inner .lets-talk-heading { color: rgba(255,255,255,.95); }
+    body.light-mode .lets-talk-inner .lets-talk-sub { color: rgba(255,255,255,.75); }
+    body.light-mode .lets-talk-inner .avail-text { color: rgba(255,255,255,.85); }
+    body.light-mode .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; }
+    body.light-mode .lets-talk-inner .avail-cta:hover { border-color: var(--orange); color: var(--orange) !important; background: rgba(255,107,53,.10); }
     .lets-talk-heading {
       font-family: "DM Serif Display", serif;
       font-size: clamp(36px, 4vw, 52px);
@@ -3261,7 +3266,7 @@
       .lets-talk-ctas{flex-direction:column;gap:12px;}
       .avail-cta{width:100%;justify-content:center;}
       .lets-talk-section{padding:48px 16px;}
-      .lets-talk-inner{padding:32px 24px;margin:0 auto 140px;}
+      .lets-talk-inner{padding:32px 24px;margin:0 auto 160px;}
       .lets-talk-heading{font-size:clamp(28px,7vw,48px);}
 
       /* About page */
@@ -3332,7 +3337,7 @@
 
       /* Let's Talk */
       .lets-talk-section{padding:40px 12px;}
-      .lets-talk-inner{padding:24px 16px;margin:0 auto 90px;}
+      .lets-talk-inner{padding:24px 16px;margin:0 auto 105px;}
 
       /* Testimonials */
       .testimonials-section{padding:40px 12px;}
