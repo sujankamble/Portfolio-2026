@@ -121,8 +121,13 @@ const ABOUT_HTML = `
         <p class="apaper-hand-label">From my camera roll</p>
         <div class="apaper-stamp apaper-stamp-gallery" aria-hidden="true"><span>SHOT · ON · LOCATION ·</span></div>
       </div>
-      <div class="apaper-polaroids" id="flickr-polaroids">
-        <p class="apaper-gallery-fallback">developing the film... if nothing shows up, <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer">see my photos on Flickr</a></p>
+      <div class="apaper-coverflow" id="flickr-polaroids">
+        <div class="apaper-coverflow-stage" id="flickr-coverflow-stage">
+          <p class="apaper-gallery-fallback">developing the film... if nothing shows up, <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer">see my photos on Flickr</a></p>
+        </div>
+        <button class="apaper-cf-btn apaper-cf-prev" aria-label="Previous photo" style="display:none;">&#8249;</button>
+        <button class="apaper-cf-btn apaper-cf-next" aria-label="Next photo" style="display:none;">&#8250;</button>
+        <div class="apaper-cf-dots" id="flickr-cf-dots"></div>
       </div>
       <a class="apaper-flickr-link" href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer" aria-label="See more photos on my Flickr photostream">see more on Flickr
         <svg width="16" height="12" viewBox="0 0 24 14" aria-hidden="true"><path d="M1 8 C 8 4, 14 10, 21 6 M21 6 l-4 -3 M21 6 l-3 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -139,26 +144,90 @@ export default function AboutPage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
-  // Flickr polaroid wall: public JSONP feed, no API key
+  // Flickr 3D coverflow: public JSONP feed, no API key
   useEffect(() => {
     const cb = 'aboutFlickrFeed';
+    let cleanupCarousel = () => {};
+
     window[cb] = (data) => {
-      const wall = document.getElementById('flickr-polaroids');
-      if (!wall || !data?.items?.length) return;
+      const stage = document.getElementById('flickr-coverflow-stage');
+      const dotsWrap = document.getElementById('flickr-cf-dots');
+      const prevBtn = document.querySelector('.apaper-cf-prev');
+      const nextBtn = document.querySelector('.apaper-cf-next');
+      const root = document.getElementById('flickr-polaroids');
+      if (!stage || !data?.items?.length) return;
+
       const items = data.items.slice(0, 6);
-      wall.innerHTML = items.map((it, i) => {
+      stage.innerHTML = items.map(it => {
         const src = (it.media?.m || '').replace('_m.jpg', '_z.jpg');
         if (!src) return '';
-        return `<a class="apaper-polaroid apaper-polaroid-sm" href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer" aria-label="Photo from my Flickr photostream">
+        return `<div class="apaper-cf-card">
           <span class="apaper-tape apaper-tape-mini" aria-hidden="true"></span>
           <img src="${src}" alt="" loading="lazy" />
-        </a>`;
+        </div>`;
       }).join('');
+      dotsWrap.innerHTML = items.map((_, i) => `<button class="apaper-cf-dot" aria-label="Go to photo ${i + 1}"></button>`).join('');
+
+      const cards = Array.from(stage.querySelectorAll('.apaper-cf-card'));
+      const dots = Array.from(dotsWrap.querySelectorAll('.apaper-cf-dot'));
+      if (!cards.length) return;
+
+      prevBtn.style.display = '';
+      nextBtn.style.display = '';
+
+      let active = 0;
+      const render = () => {
+        const narrow = window.matchMedia('(max-width:768px)').matches;
+        const offsetX = narrow ? 90 : 170;
+        const angle = narrow ? 25 : 40;
+        const maxOffset = narrow ? 1 : 2;
+        cards.forEach((card, i) => {
+          const offset = i - active;
+          const abs = Math.abs(offset);
+          card.style.transform = `translate(-50%,-50%) translateX(${offset * offsetX}px) rotateY(${offset * -angle}deg) scale(${offset === 0 ? 1 : 0.85})`;
+          card.style.opacity = abs > maxOffset ? '0' : '1';
+          card.style.zIndex = String(100 - abs);
+          card.style.pointerEvents = abs > maxOffset ? 'none' : 'auto';
+        });
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === active));
+      };
+
+      const goTo = (n) => { active = (n + cards.length) % cards.length; render(); };
+      const prev = () => goTo(active - 1);
+      const next = () => goTo(active + 1);
+
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+      let timer = setInterval(next, 5000);
+      const pause = () => clearInterval(timer);
+      const resume = () => { clearInterval(timer); timer = setInterval(next, 5000); };
+      root.addEventListener('mouseenter', pause);
+      root.addEventListener('mouseleave', resume);
+
+      const onResize = () => render();
+      window.addEventListener('resize', onResize);
+
+      render();
+
+      cleanupCarousel = () => {
+        clearInterval(timer);
+        prevBtn.removeEventListener('click', prev);
+        nextBtn.removeEventListener('click', next);
+        root.removeEventListener('mouseenter', pause);
+        root.removeEventListener('mouseleave', resume);
+        window.removeEventListener('resize', onResize);
+      };
     };
     const script = document.createElement('script');
     script.src = 'https://www.flickr.com/services/feeds/photos_public.gne?id=sujans_photography&format=json&jsoncallback=' + cb;
     document.body.appendChild(script);
-    return () => { if (script.parentNode) script.parentNode.removeChild(script); delete window[cb]; };
+    return () => {
+      if (script.parentNode) script.parentNode.removeChild(script);
+      delete window[cb];
+      cleanupCarousel();
+    };
   }, []);
 
   return (
