@@ -144,23 +144,21 @@ export default function AboutPage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
-  // Flickr 3D coverflow: public JSONP feed, no API key
+  // Camera roll 3D coverflow: static images
   useEffect(() => {
-    const cb = 'aboutFlickrFeed';
     let cleanupCarousel = () => {};
 
-    window[cb] = (data) => {
+    (() => {
       const stage = document.getElementById('flickr-coverflow-stage');
       const dotsWrap = document.getElementById('flickr-cf-dots');
       const prevBtn = document.querySelector('.apaper-cf-prev');
       const nextBtn = document.querySelector('.apaper-cf-next');
       const root = document.getElementById('flickr-polaroids');
-      if (!stage || !data?.items?.length) return;
+      if (!stage) return;
 
-      const items = data.items.slice(0, 6);
-      stage.innerHTML = items.map(it => {
-        const src = (it.media?.m || '').replace('_m.jpg', '_z.jpg');
-        if (!src) return '';
+      const items = Array.from({ length: 16 }, (_, i) => `/Portfolio-2026/images/Flickr${i + 1}.jpg`);
+
+      stage.innerHTML = items.map(src => {
         return `<div class="apaper-cf-card">
           <span class="apaper-tape apaper-tape-mini" aria-hidden="true"></span>
           <img src="${src}" alt="" loading="lazy" />
@@ -219,13 +217,8 @@ export default function AboutPage() {
         root.removeEventListener('mouseleave', resume);
         window.removeEventListener('resize', onResize);
       };
-    };
-    const script = document.createElement('script');
-    script.src = 'https://www.flickr.com/services/feeds/photos_public.gne?id=sujans_photography&format=json&jsoncallback=' + cb;
-    document.body.appendChild(script);
+    })();
     return () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
-      delete window[cb];
       cleanupCarousel();
     };
   }, []);
