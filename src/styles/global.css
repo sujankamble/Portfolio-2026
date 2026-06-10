@@ -3471,21 +3471,21 @@
     }
     .resume-profile-card{
       background:var(--surface2); border:.5px solid var(--border); border-radius:14px;
-      padding:24px; display:flex; flex-direction:column; gap:10px;
+      padding:24px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
     }
     .resume-photo{
       width:88px; height:88px; border-radius:50%; overflow:hidden;
-      border:2px solid var(--orange); margin-bottom:6px;
+      border:2px solid var(--orange); margin-bottom:10px;
     }
-    .resume-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; transform:scale(1.4); display:block; }
+    .resume-photo img{ width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .resume-profile-card .resume-tag{ margin-bottom:0; }
     .resume-name{
       font-family:"DM Serif Display", serif;
       font-size:30px; font-weight:400; letter-spacing:-.01em;
-      color:var(--ink); line-height:1.15; margin:2px 0 4px;
+      color:var(--ink); line-height:1.15; margin:0 0 4px;
     }
-    .resume-subtitle{ font-size:13px; font-weight:300; color:var(--ink3); margin-top:-22px; margin-bottom:4px; }
 
-    .resume-contact{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+    .resume-contact{ list-style:none; padding:0; margin:6px 0 0; display:flex; flex-direction:column; gap:8px; align-items:center; }
     .resume-contact li{ display:flex; align-items:center; gap:10px; font-size:12.5px; font-weight:300; color:var(--ink3); }
     .resume-contact svg{ flex-shrink:0; color:var(--orange); }
     .resume-contact a{ color:var(--ink3); text-decoration:none; word-break:break-all; }

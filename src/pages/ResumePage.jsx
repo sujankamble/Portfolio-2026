@@ -20,7 +20,6 @@ const RESUME_HTML = `
           </div>
           <p class="resume-tag">// Senior UX Designer</p>
           <h1 class="resume-name">Sujan Kamble</h1>
-          <p class="resume-subtitle">Enterprise Product Design &middot; 13+ Years</p>
 
           <ul class="resume-contact">
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sujankamble@gmail.com">sujankamble@gmail.com</a></li>
