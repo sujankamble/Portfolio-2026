@@ -1670,6 +1670,7 @@
     }
     .apaper-cf-card.active { filter: blur(0); }
     .apaper-cf-card img { display: block; width: 100%; aspect-ratio: 3/3.4; object-fit: cover; border-radius: 6px 6px 0 0; }
+    .apaper-cf-caption { display: block; text-align: center; font-family: "Caveat", cursive; font-size: 18px; color: #6b6457; padding-top: 6px; }
     .apaper-cf-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
       width: 40px; height: 40px;

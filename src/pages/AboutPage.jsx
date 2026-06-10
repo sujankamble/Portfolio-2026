@@ -157,12 +157,14 @@ export default function AboutPage() {
       const root = document.getElementById('flickr-polaroids');
       if (!stage) return;
 
+      const captions = ['Golden edge', 'Divine', 'Flag', 'Let me click the photo', 'Men @ Work', 'Perspective', 'Recollection of memories', 'Romantic Dusk', 'Folk Dance', 'Periwinkle tinkle', 'race with the time', 'the dream chasers', 'Traditions', 'Strict shadows', 'The passion', 'Architecture'];
       const items = Array.from({ length: 16 }, (_, i) => `/Portfolio-2026/images/Flickr${i + 1}.jpg`);
 
-      stage.innerHTML = items.map(src => {
+      stage.innerHTML = items.map((src, i) => {
         return `<div class="apaper-cf-card">
           <span class="apaper-tape apaper-tape-mini" aria-hidden="true"></span>
-          <img src="${src}" alt="" loading="lazy" />
+          <img src="${src}" alt="${captions[i]}" loading="lazy" />
+          <span class="apaper-cf-caption">${captions[i]}</span>
         </div>`;
       }).join('');
       dotsWrap.innerHTML = items.map((_, i) => `<button class="apaper-cf-dot" aria-label="Go to photo ${i + 1}"></button>`).join('');
