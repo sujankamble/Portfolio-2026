@@ -1640,13 +1640,13 @@
     .apaper-gallery-head .apaper-hand-label { margin-bottom: 0; }
     /* 3D coverflow carousel */
     .apaper-coverflow-wrap {
-      background: rgba(60,55,47,.05);
-      border: 1px solid rgba(60,55,47,.1);
+      background: rgba(60,55,47,.18);
+      border: 1px solid rgba(60,55,47,.25);
       border-radius: 12px;
       padding: 24px;
       margin: 18px 0 10px;
     }
-    body.light-mode .apaper-coverflow-wrap { background: rgba(60,55,47,.04); border-color: rgba(60,55,47,.1); }
+    body.light-mode .apaper-coverflow-wrap { background: rgba(60,55,47,.12); border-color: rgba(60,55,47,.2); }
     .apaper-coverflow {
       position: relative;
       height: 360px;
