@@ -97,25 +97,6 @@ const RESUME_HTML = `
 
       <main class="resume-main">
 
-        <div class="resume-stats stagger-wrap">
-          <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">13<span class="resume-stat-plus">+</span></span>
-            <span class="resume-stat-label">Years of experience</span>
-          </div>
-          <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">40<span class="resume-stat-plus">+</span></span>
-            <span class="resume-stat-label">Projects completed</span>
-          </div>
-          <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">5</span>
-            <span class="resume-stat-label">Industries designed for</span>
-          </div>
-          <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">8</span>
-            <span class="resume-stat-label">Max team size led</span>
-          </div>
-        </div>
-
         <div class="resume-bar">Executive Summary</div>
         <p class="resume-summary">Senior UX Designer with 13+ years delivering enterprise-grade digital solutions across banking, financial services, insurance, and healthcare. Proven ability to translate complex business requirements into scalable, intuitive experiences that drive measurable improvements in usability, operational efficiency, Practitioner of human-centred design from generative research and wireframing through design systems and accessibility (AA) compliant delivery. Adept at leading cross-functional programmes in Agile environments, consulting senior stakeholders, and mentoring design talent consistently recognised for strategic thinking, design capabilities, and high-quality execution in global organisations.</p>
 
@@ -135,6 +116,25 @@ const RESUME_HTML = `
           <span>Cross-functional Team Leadership</span>
           <span>Agile / Scrum Delivery</span>
           <span>Mentoring &amp; Talent Development</span>
+        </div>
+
+        <div class="resume-stats stagger-wrap">
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">13<span class="resume-stat-plus">+</span></span>
+            <span class="resume-stat-label">Years of experience</span>
+          </div>
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">40<span class="resume-stat-plus">+</span></span>
+            <span class="resume-stat-label">Projects completed</span>
+          </div>
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">5</span>
+            <span class="resume-stat-label">Industries designed for</span>
+          </div>
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">8</span>
+            <span class="resume-stat-label">Max team size led</span>
+          </div>
         </div>
 
         <p class="resume-tag">// Experience</p>
