@@ -46,10 +46,8 @@ export default function Nav() {
     <>
       <nav id="nav" className={navClass}>
         <Link to="/" className="nav-mobile-name">Sujaan Kamble</Link>
-        <div className="nav-left-spacer"></div>
+        <Link to="/" className="nav-name-corner">Sujaan Kamble</Link>
         <ul className="nav-links">
-          <li><Link to="/" className="nav-name-pill">Sujaan Kamble</Link></li>
-          <li><div className="nav-pill-sep"></div></li>
           <li><Link to="/" className={isHome ? 'active' : ''}>Home</Link></li>
           <li><div className="nav-pill-sep"></div></li>
           <li><button className="nav-link-btn" onClick={scrollToWork}>Work</button></li>
