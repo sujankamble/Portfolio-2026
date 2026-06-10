@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Nav from './components/Nav/Nav.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
+import ResumePage from './pages/ResumePage.jsx';
 import Banking1Page from './pages/cases/Banking1Page.jsx';
 import Banking2Page from './pages/cases/Banking2Page.jsx';
 import AuditPage from './pages/cases/AuditPage.jsx';
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/"              element={<HomePage />} />
         <Route path="/about"         element={<AboutPage />} />
+        <Route path="/resume"        element={<ResumePage />} />
         <Route path="/case/banking1" element={<Banking1Page />} />
         <Route path="/case/banking2" element={<Banking2Page />} />
         <Route path="/case/audit"    element={<AuditPage />} />
