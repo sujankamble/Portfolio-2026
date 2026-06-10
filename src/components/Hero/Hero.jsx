@@ -1,7 +1,20 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
   const canvasRef = useRef(null);
+  const [flickrPhoto, setFlickrPhoto] = useState(null);
+
+  useEffect(() => {
+    const callbackName = 'jsonFlickrFeed';
+    window[callbackName] = (data) => {
+      const url = data?.items?.[0]?.media?.m;
+      if (url) setFlickrPhoto(url.replace('_m.jpg', '_q.jpg'));
+    };
+    const script = document.createElement('script');
+    script.src = 'https://www.flickr.com/services/feeds/photos_public.gne?id=sujans_photography&format=json&jsoncallback=jsonFlickrFeed';
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); delete window[callbackName]; };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -103,8 +116,16 @@ export default function Hero() {
       <div className="hero-arc-2"></div>
       <div className="hero-content hero-center">
         <h1 className="hero-heading hero-heading-center">
-          Hey, I'm <img src="/Portfolio-2026/images/Hero_profile.png" alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
-          A <span className="word-shuffle" id="wordShuffle"></span> Designer <img src="/Portfolio-2026/images/Hero_nature1.png" alt="" className="hero-inline-img" /><img src="/Portfolio-2026/images/Hero_nature2.png" alt="" className="hero-inline-img" /><br/>
+          Hey, I'm <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
+          A <span className="word-shuffle" id="wordShuffle"></span> Designer{' '}
+          <a href="https://photos.app.goo.gl/JAkDidgmP2taFnaWA" target="_blank" rel="noreferrer" title="View my photo album">
+            <img src="/Portfolio-2026/images/Hero_nature1.png" alt="" className="hero-inline-img" />
+          </a>
+          {flickrPhoto && (
+            <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer" title="View my Flickr photostream">
+              <img src={flickrPhoto} alt="" className="hero-inline-img" />
+            </a>
+          )}<br/>
           turning complex systems into things people <em>understand</em>
         </h1>
         <p className="hero-sub hero-sub-center">
