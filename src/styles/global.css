@@ -3511,11 +3511,9 @@
       background:var(--surface); border:.5px solid var(--border); border-radius:12px;
       padding:14px 16px; display:flex; flex-direction:column; gap:4px;
     }
-    .resume-stat-num{ font-family:"DM Sans",monospace; font-size:22px; font-weight:600; color:var(--ink); }
+    .resume-stat-num{ font-family:"DM Serif Display",serif; font-size:28px; font-weight:400; color:var(--ink); }
+    .resume-stat-plus{ color:var(--orange); }
     .resume-stat-label{ font-size:11px; font-weight:400; color:var(--ink4); }
-    .resume-stat-up .resume-stat-num{ color:var(--audit); }
-    .resume-stat-down{ background:rgba(var(--orange-rgb),.08); border-color:rgba(var(--orange-rgb),.25); }
-    .resume-stat-down .resume-stat-num{ color:var(--orange); }
 
     .resume-job{ padding:18px 0; border-bottom:.5px solid var(--border); }
     .resume-job:last-child{ border-bottom:none; padding-bottom:0; }

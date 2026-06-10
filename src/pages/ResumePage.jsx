@@ -15,7 +15,7 @@ const RESUME_HTML = `
 
       <aside class="resume-side">
         <div class="resume-photo">
-          <img src="/Portfolio-2026/images/Profile picture 2.jpeg" alt="Sujan Kamble" />
+          <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" />
         </div>
         <p class="resume-tag">// Senior UX Designer</p>
         <h1 class="resume-name">Sujan Kamble</h1>
@@ -98,21 +98,21 @@ const RESUME_HTML = `
       <main class="resume-main">
 
         <div class="resume-stats stagger-wrap">
-          <div class="resume-stat resume-stat-up stagger-child">
-            <span class="resume-stat-num">+25%</span>
-            <span class="resume-stat-label">Scoping Accuracy</span>
-          </div>
-          <div class="resume-stat resume-stat-down stagger-child">
-            <span class="resume-stat-num">-30%</span>
-            <span class="resume-stat-label">Auditor Task Time</span>
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">13<span class="resume-stat-plus">+</span></span>
+            <span class="resume-stat-label">Years of experience</span>
           </div>
           <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">4+</span>
-            <span class="resume-stat-label">Product Lines</span>
+            <span class="resume-stat-num">40<span class="resume-stat-plus">+</span></span>
+            <span class="resume-stat-label">Projects completed</span>
           </div>
           <div class="resume-stat stagger-child">
-            <span class="resume-stat-num">13+</span>
-            <span class="resume-stat-label">Years Experience</span>
+            <span class="resume-stat-num">5</span>
+            <span class="resume-stat-label">Industries designed for</span>
+          </div>
+          <div class="resume-stat stagger-child">
+            <span class="resume-stat-num">8</span>
+            <span class="resume-stat-label">Max team size led</span>
           </div>
         </div>
 
