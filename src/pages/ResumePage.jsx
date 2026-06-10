@@ -14,19 +14,21 @@ const RESUME_HTML = `
     <div class="resume-grid">
 
       <aside class="resume-side">
-        <div class="resume-photo">
-          <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" />
-        </div>
-        <p class="resume-tag">// Senior UX Designer</p>
-        <h1 class="resume-name">Sujan Kamble</h1>
-        <p class="resume-subtitle">Enterprise Product Design &middot; 13+ Years</p>
+        <div class="resume-profile-card">
+          <div class="resume-photo">
+            <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" />
+          </div>
+          <p class="resume-tag">// Senior UX Designer</p>
+          <h1 class="resume-name">Sujan Kamble</h1>
+          <p class="resume-subtitle">Enterprise Product Design &middot; 13+ Years</p>
 
-        <ul class="resume-contact">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sujankamble@gmail.com">sujankamble@gmail.com</a></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>9890936926</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Pune, Maharashtra, India</span></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="http://linkedin.com/in/sujan-kamble-02393930" target="_blank" rel="noreferrer">linkedin.com/in/sujankamble</a></li>
-        </ul>
+          <ul class="resume-contact">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sujankamble@gmail.com">sujankamble@gmail.com</a></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>9890936926</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Pune, Maharashtra, India</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="http://linkedin.com/in/sujan-kamble-02393930" target="_blank" rel="noreferrer">linkedin.com/in/sujankamble</a></li>
+          </ul>
+        </div>
 
         <div class="resume-side-section">
           <p class="resume-tag">// Skills</p>
@@ -97,10 +99,10 @@ const RESUME_HTML = `
 
       <main class="resume-main">
 
-        <div class="resume-bar">Executive Summary</div>
+        <p class="resume-tag">// Executive Summary</p>
         <p class="resume-summary">Senior UX Designer with 13+ years delivering enterprise-grade digital solutions across banking, financial services, insurance, and healthcare. Proven ability to translate complex business requirements into scalable, intuitive experiences that drive measurable improvements in usability, operational efficiency, Practitioner of human-centred design from generative research and wireframing through design systems and accessibility (AA) compliant delivery. Adept at leading cross-functional programmes in Agile environments, consulting senior stakeholders, and mentoring design talent consistently recognised for strategic thinking, design capabilities, and high-quality execution in global organisations.</p>
 
-        <div class="resume-bar">Core Competencies</div>
+        <p class="resume-tag">// Core Competencies</p>
         <div class="resume-competencies">
           <span>End-to-End UX Strategy &amp; Delivery</span>
           <span>User Research &amp; Usability Evaluation</span>
