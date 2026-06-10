@@ -116,6 +116,27 @@ const RESUME_HTML = `
           </div>
         </div>
 
+        <div class="resume-bar">Executive Summary</div>
+        <p class="resume-summary">Senior UX Designer with 13+ years delivering enterprise-grade digital solutions across banking, financial services, insurance, and healthcare. Proven ability to translate complex business requirements into scalable, intuitive experiences that drive measurable improvements in usability, operational efficiency, Practitioner of human-centred design from generative research and wireframing through design systems and accessibility (AA) compliant delivery. Adept at leading cross-functional programmes in Agile environments, consulting senior stakeholders, and mentoring design talent consistently recognised for strategic thinking, design capabilities, and high-quality execution in global organisations.</p>
+
+        <div class="resume-bar">Core Competencies</div>
+        <div class="resume-competencies">
+          <span>End-to-End UX Strategy &amp; Delivery</span>
+          <span>User Research &amp; Usability Evaluation</span>
+          <span>Wireframing &amp; High-Fidelity Prototyping</span>
+          <span>Design Systems &amp; Pattern Libraries</span>
+          <span>Interaction &amp; Interface Design</span>
+          <span>Information Architecture</span>
+          <span>Accessibility</span>
+          <span>Journey Mapping &amp; Service Design</span>
+          <span>Data-Driven &amp; Analytics-Led Design</span>
+          <span>Human-Centred Design (HCD)</span>
+          <span>Design Thinking Facilitation</span>
+          <span>Cross-functional Team Leadership</span>
+          <span>Agile / Scrum Delivery</span>
+          <span>Mentoring &amp; Talent Development</span>
+        </div>
+
         <p class="resume-tag">// Experience</p>
 
         <article class="resume-job">
