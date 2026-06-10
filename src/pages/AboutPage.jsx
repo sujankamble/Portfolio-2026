@@ -119,15 +119,16 @@ const ABOUT_HTML = `
       </div>
       <div class="apaper-gallery-head">
         <p class="apaper-hand-label">From my camera roll</p>
-        <div class="apaper-stamp apaper-stamp-gallery" aria-hidden="true"><span>SHOT · ON · LOCATION ·</span></div>
       </div>
-      <div class="apaper-coverflow" id="flickr-polaroids">
-        <div class="apaper-coverflow-stage" id="flickr-coverflow-stage">
-          <p class="apaper-gallery-fallback">developing the film... if nothing shows up, <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer">see my photos on Flickr</a></p>
+      <div class="apaper-coverflow-wrap">
+        <div class="apaper-coverflow" id="flickr-polaroids">
+          <div class="apaper-coverflow-stage" id="flickr-coverflow-stage">
+            <p class="apaper-gallery-fallback">developing the film... if nothing shows up, <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer">see my photos on Flickr</a></p>
+          </div>
+          <button class="apaper-cf-btn apaper-cf-prev" aria-label="Previous photo" style="display:none;">&#8249;</button>
+          <button class="apaper-cf-btn apaper-cf-next" aria-label="Next photo" style="display:none;">&#8250;</button>
+          <div class="apaper-cf-dots" id="flickr-cf-dots"></div>
         </div>
-        <button class="apaper-cf-btn apaper-cf-prev" aria-label="Previous photo" style="display:none;">&#8249;</button>
-        <button class="apaper-cf-btn apaper-cf-next" aria-label="Next photo" style="display:none;">&#8250;</button>
-        <div class="apaper-cf-dots" id="flickr-cf-dots"></div>
       </div>
       <a class="apaper-flickr-link" href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer" aria-label="See more photos on my Flickr photostream">see more on Flickr
         <svg width="16" height="12" viewBox="0 0 24 14" aria-hidden="true"><path d="M1 8 C 8 4, 14 10, 21 6 M21 6 l-4 -3 M21 6 l-3 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -186,6 +187,7 @@ export default function AboutPage() {
           card.style.opacity = abs > maxOffset ? '0' : '1';
           card.style.zIndex = String(100 - abs);
           card.style.pointerEvents = abs > maxOffset ? 'none' : 'auto';
+          card.classList.toggle('active', offset === 0);
         });
         dots.forEach((dot, i) => dot.classList.toggle('active', i === active));
       };
