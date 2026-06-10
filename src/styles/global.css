@@ -111,6 +111,7 @@
     }
     body.light-mode #heroCanvas { opacity: 0.80; mix-blend-mode: normal; }
     body.light-mode .hero-heading { color: #142C49; }
+    body.light-mode .hero-heading em { color: #2A6DFF; }
     body.light-mode .word-shuffle { color: #2A6DFF !important; }
     body.light-mode .flip-char { color: #2A6DFF !important; }
     body.light-mode .flip-char-inner { color: #2A6DFF !important; }

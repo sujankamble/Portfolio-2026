@@ -1,20 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const canvasRef = useRef(null);
-  const [flickrPhoto, setFlickrPhoto] = useState(null);
-
-  useEffect(() => {
-    const callbackName = 'jsonFlickrFeed';
-    window[callbackName] = (data) => {
-      const url = data?.items?.[0]?.media?.m;
-      if (url) setFlickrPhoto(url.replace('_m.jpg', '_q.jpg'));
-    };
-    const script = document.createElement('script');
-    script.src = 'https://www.flickr.com/services/feeds/photos_public.gne?id=sujans_photography&format=json&jsoncallback=jsonFlickrFeed';
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); delete window[callbackName]; };
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -78,7 +65,7 @@ export default function Hero() {
   useEffect(() => {
     const container = document.getElementById('wordShuffle');
     if (!container) return;
-    const words = ['UX', 'Product', 'Experience', 'Interaction'];
+    const words = ['Product', 'Experience', 'Interaction', 'Systems'];
     let idx = 0, busy = false;
     const STAGGER_OUT = 28, STAGGER_IN = 52, OUT_DUR = 180, IN_DUR = 240, GAP = 60, HOLD = 3000;
 
@@ -106,8 +93,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToWork = () => { const w = document.getElementById('work'); if (w) w.scrollIntoView({ behavior: 'smooth' }); };
-
   return (
     <section className="hero">
       <canvas ref={canvasRef} id="heroCanvas"></canvas>
@@ -117,15 +102,7 @@ export default function Hero() {
       <div className="hero-content hero-center">
         <h1 className="hero-heading hero-heading-center">
           Hey, I'm <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
-          A <span className="word-shuffle" id="wordShuffle"></span> Designer{' '}
-          <a href="https://photos.app.goo.gl/JAkDidgmP2taFnaWA" target="_blank" rel="noreferrer" title="View my photo album">
-            <img src="/Portfolio-2026/images/Hero_nature1.png" alt="" className="hero-inline-img" />
-          </a>
-          {flickrPhoto && (
-            <a href="https://www.flickr.com/photos/sujans_photography/" target="_blank" rel="noreferrer" title="View my Flickr photostream">
-              <img src={flickrPhoto} alt="" className="hero-inline-img" />
-            </a>
-          )}<br/>
+          A <span className="word-shuffle" id="wordShuffle"></span> Designer<br/>
           turning complex systems into things people <em>understand</em>
         </h1>
         <p className="hero-sub hero-sub-center">
@@ -146,9 +123,6 @@ export default function Hero() {
             <span className="avail-cta-tooltip-text">9890936926</span>
           </span>
         </div>
-        <button className="hero-scroll-hint" onClick={scrollToWork} aria-label="Scroll to work">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </button>
       </div>
     </section>
   );
