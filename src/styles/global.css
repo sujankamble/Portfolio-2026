@@ -216,7 +216,7 @@
 
     /* ── LET'S TALK ── */
     body.light-mode .lets-talk-section { border-top-color: rgba(20,44,73,0.10); background: url('/Portfolio-2026/images/Lets talk_BG.jpg') center/cover no-repeat; }
-    body.light-mode .lets-talk-inner { background: rgba(255,255,255,.30); border-color: rgba(20,44,73,.12); box-shadow: 0 8px 32px rgba(20,44,73,.10); }
+    body.light-mode .lets-talk-inner { background: linear-gradient(rgba(10,20,15,.45), rgba(10,20,15,.45)), rgba(255,255,255,.04); border-color: rgba(255,255,255,.15); box-shadow: 0 8px 32px rgba(20,44,73,.10); }
     body.light-mode .lets-talk-heading { color: #142C49; }
     body.light-mode .lets-talk-sub { color: rgba(20,44,73,0.70); }
     body.light-mode .avail-pill { background: rgba(76,175,80,0.08); border-color: rgba(76,175,80,0.30); }
@@ -3037,22 +3037,27 @@
       background: url('/Portfolio-2026/images/Lets talk_BG.jpg') center/cover no-repeat;
     }
     .lets-talk-inner {
-      max-width: 820px;
-      margin: 0 auto 220px;
+      max-width: 680px;
+      margin: 0 auto 320px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0;
       position: relative;
       z-index: 1;
-      padding: 48px 40px;
+      padding: 36px 40px;
       border-radius: 24px;
       border: .5px solid rgba(255,255,255,.15);
-      background: rgba(255,255,255,.04);
+      background: linear-gradient(rgba(10,20,15,.45), rgba(10,20,15,.45)), rgba(255,255,255,.04);
       backdrop-filter: blur(12px) saturate(160%);
       -webkit-backdrop-filter: blur(12px) saturate(160%);
       box-shadow: 0 8px 32px rgba(0,0,0,.18);
     }
+    .lets-talk-inner .lets-talk-heading { color: rgba(255,255,255,.95); }
+    .lets-talk-inner .lets-talk-sub { color: rgba(255,255,255,.75); }
+    .lets-talk-inner .avail-text { color: rgba(255,255,255,.85); }
+    .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; }
+    .lets-talk-inner .avail-cta:hover { border-color: var(--orange); color: var(--orange) !important; background: rgba(255,107,53,.10); }
     .lets-talk-heading {
       font-family: "DM Serif Display", serif;
       font-size: clamp(36px, 4vw, 52px);
@@ -3256,7 +3261,7 @@
       .lets-talk-ctas{flex-direction:column;gap:12px;}
       .avail-cta{width:100%;justify-content:center;}
       .lets-talk-section{padding:48px 16px;}
-      .lets-talk-inner{padding:32px 24px;margin:0 auto 80px;}
+      .lets-talk-inner{padding:32px 24px;margin:0 auto 140px;}
       .lets-talk-heading{font-size:clamp(28px,7vw,48px);}
 
       /* About page */
@@ -3327,7 +3332,7 @@
 
       /* Let's Talk */
       .lets-talk-section{padding:40px 12px;}
-      .lets-talk-inner{padding:24px 16px;margin:0 auto 40px;}
+      .lets-talk-inner{padding:24px 16px;margin:0 auto 90px;}
 
       /* Testimonials */
       .testimonials-section{padding:40px 12px;}
