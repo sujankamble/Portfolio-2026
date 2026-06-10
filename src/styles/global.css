@@ -2306,6 +2306,28 @@
     }
     .avail-cta:hover { border-color: var(--orange); color: var(--orange); background: rgba(255,107,53,.06); }
     .avail-cta svg { width:13px;height:13px;flex-shrink:0; }
+    .avail-cta-tooltip { position: relative; cursor: default; }
+    .avail-cta-tooltip-text {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(20,20,25,.95);
+      border: .5px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.92);
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease, transform .2s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .avail-cta-tooltip:hover .avail-cta-tooltip-text,
+    .avail-cta-tooltip:focus .avail-cta-tooltip-text { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    body.light-mode .avail-cta-tooltip-text { background: rgba(255,255,255,.97); border-color: rgba(20,44,73,.15); color: #142C49; }
 
     /* WORK SECTION LABEL */
     .work-section-label {
