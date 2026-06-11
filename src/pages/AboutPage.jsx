@@ -75,13 +75,10 @@ const ABOUT_HTML = `
       <p class="apaper-hand-label">Tools I play with</p>
       <div class="apaper-tools">
         <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/figma/3c372f" alt="" loading="lazy" />Figma</span>
-        <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/figma/3c372f" alt="" loading="lazy" />FigJam</span>
         <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/miro/3c372f" alt="" loading="lazy" />Miro</span>
         <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/sketch/3c372f" alt="" loading="lazy" />Sketch</span>
-        <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/zeplin/3c372f" alt="" loading="lazy" />Zeplin</span>
         <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/jira/3c372f" alt="" loading="lazy" />Jira</span>
         <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/confluence/3c372f" alt="" loading="lazy" />Confluence</span>
-        <span class="apaper-tool-chip"><img src="https://cdn.simpleicons.org/invision/3c372f" alt="" loading="lazy" />InVision</span>
       </div>
       <p class="apaper-hand-label apaper-industries-label">Industries I've designed for</p>
       <div class="apaper-industries">
