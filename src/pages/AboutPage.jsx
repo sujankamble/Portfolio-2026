@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useGlobalEffects.js';
 
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const ABOUT_HTML = `
   <div class="apaper-board">
 
@@ -23,7 +25,7 @@ const ABOUT_HTML = `
       <div class="apaper-hero-right">
         <div class="apaper-polaroid apaper-polaroid-profile">
           <svg class="apaper-clip" width="26" height="52" viewBox="0 0 26 52" aria-hidden="true"><path d="M8 14 v26 a5 5 0 0 0 10 0 V10 a8 8 0 0 0 -16 0 v32" fill="none" stroke="#8a8378" stroke-width="2.4" stroke-linecap="round"/></svg>
-          <img src="/Portfolio-2026/images/Profile picture 2.jpeg" alt="Sujan Kamble" />
+          <img src="${B}/images/Profile picture 2.jpeg" alt="Sujan Kamble" />
           <span class="apaper-polaroid-caption">Sujan · Pune</span>
         </div>
       </div>
@@ -154,7 +156,7 @@ export default function AboutPage() {
       if (!stage) return;
 
       const captions = ['Golden edge', 'Divine', 'Flag', 'Let me click the photo', 'Men @ Work', 'Perspective', 'Recollection of memories', 'Romantic Dusk', 'Folk Dance', 'Periwinkle tinkle', 'race with the time', 'the dream chasers', 'Traditions', 'Strict shadows', 'The passion', 'Architecture'];
-      const items = Array.from({ length: 16 }, (_, i) => `/Portfolio-2026/images/Flickr${i + 1}.jpg`);
+      const items = Array.from({ length: 16 }, (_, i) => `${B}/images/Flickr${i + 1}.jpg`);
 
       stage.innerHTML = items.map((src, i) => {
         return `<div class="apaper-cf-card">

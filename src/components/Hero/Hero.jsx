@@ -101,7 +101,7 @@ export default function Hero() {
       <div className="hero-arc-2"></div>
       <div className="hero-content hero-center">
         <h1 className="hero-heading hero-heading-center">
-          Hey, I'm <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
+          Hey, I'm <img src={`${import.meta.env.BASE_URL}images/Profile picutre.png`} alt="Sujan Kamble" className="hero-inline-img" /> Sujan Kamble<br/>
           A <span className="word-shuffle" id="wordShuffle"></span> Designer<br/>
           turning complex systems into things people <em>understand</em>
         </h1>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useGlobalEffects.js';
 
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
 const RESUME_HTML = `
   <div class="resume-shell reveal">
 
@@ -16,7 +17,7 @@ const RESUME_HTML = `
       <aside class="resume-side">
         <div class="resume-profile-card">
           <div class="resume-photo">
-            <img src="/Portfolio-2026/images/Profile picutre.png" alt="Sujan Kamble" />
+            <img src="${B}/images/Profile picutre.png" alt="Sujan Kamble" />
           </div>
           <p class="resume-tag">// Senior UX Designer</p>
           <h1 class="resume-name">Sujan Kamble</h1>
