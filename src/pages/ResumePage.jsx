@@ -6,7 +6,7 @@ const RESUME_HTML = `
   <div class="resume-shell reveal">
 
     <div class="resume-actions">
-      <a class="resume-print-btn" href="${B}/docs/resume.pdf" download="Sujan_Kamble_Resume.pdf" aria-label="Download resume as PDF">
+      <a class="resume-print-btn" href="${B}/docs/resume.pdf" download="Sujan_Kamble_UX_Resume_2026.pdf" aria-label="Download resume as PDF">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Download PDF
       </a>
