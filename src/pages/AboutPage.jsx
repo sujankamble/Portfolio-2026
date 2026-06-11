@@ -26,7 +26,6 @@ const ABOUT_HTML = `
           <img src="/Portfolio-2026/images/Profile picture 2.jpeg" alt="Sujan Kamble" />
           <span class="apaper-polaroid-caption">Sujan · Pune</span>
         </div>
-        <div class="apaper-stamp" aria-hidden="true"><span>PUNE · INDIA · UX ·</span></div>
       </div>
     </div>
 

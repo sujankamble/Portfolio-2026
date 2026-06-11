@@ -1473,7 +1473,7 @@
       display: grid;
       grid-template-columns: 1fr 300px;
       gap: 64px;
-      align-items: center;
+      align-items: start;
     }
     .apaper-hero-left { min-width: 0; }
     .apaper-name {
@@ -1511,7 +1511,7 @@
       transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1);
     }
     .apaper-polaroid:hover { transform: rotate(0deg) scale(1.02); box-shadow: 0 4px 8px rgba(0,0,0,.18), 0 18px 36px rgba(0,0,0,.20); }
-    .apaper-polaroid img { display: block; width: 100%; aspect-ratio: 3/3.4; object-fit: cover; border-radius: 0; }
+    .apaper-polaroid img { display: block; width: 100%; aspect-ratio: 3/3.4; object-fit: cover; border-radius: 8px; }
     .apaper-polaroid-caption {
       position: absolute; bottom: 8px; left: 0; right: 0;
       text-align: center;
