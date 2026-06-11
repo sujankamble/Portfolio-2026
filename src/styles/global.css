@@ -1573,9 +1573,7 @@
     /* Skills: index cards */
     .apaper-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .apaper-index-card {
-      background:
-        linear-gradient(rgba(200,60,50,.5) 0, rgba(200,60,50,.5) 2px, transparent 2px) 0 44px no-repeat,
-        #fffdf8;
+      background: #fffdf8;
       border: .5px solid rgba(0,0,0,.08);
       border-radius: 3px;
       padding: 24px 22px;
