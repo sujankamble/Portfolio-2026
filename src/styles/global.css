@@ -1892,7 +1892,7 @@
     .edu-card ul li::before{content:"·";position:absolute;left:0;color:rgba(155,45,155,.6);font-size:16px;line-height:1.2;}
 
     /* ── PAGE ANATOMY ── */
-    .anatomy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+    .anatomy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;align-items:start;}
     .anatomy-col{}
     .anatomy-col-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;padding-bottom:8px;}
     .anatomy-items{display:flex;flex-direction:column;gap:8px;}
