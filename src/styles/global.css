@@ -3614,3 +3614,33 @@
       .resume-print-btn{ width:100%; justify-content:center; }
     }
 
+
+@media print {
+  #nav, .nav-mobile-drawer, #cursor, #cursorRing, .resume-actions {
+    display: none !important;
+  }
+  @page { size: A4; margin: 14mm; }
+  body { background: #FFFFFF !important; }
+  .resume-page {
+    padding: 0 !important;
+    background: #FFFFFF !important;
+  }
+  .resume-shell {
+    max-width: 100% !important;
+  }
+  body.light-mode .resume-page,
+  .resume-page {
+    --bg: #FFFFFF;
+    --surface: #F2F5FF;
+    --surface2: #E5EAFF;
+    --ink: #142C49;
+    --ink2: rgba(20,44,73,0.85);
+    --ink3: rgba(20,44,73,0.65);
+    --ink4: rgba(20,44,73,0.50);
+    --border: rgba(20,44,73,0.14);
+    --orange: #2A6DFF;
+  }
+  .resume-grid {
+    grid-template-columns: 280px 1fr !important;
+  }
+}
