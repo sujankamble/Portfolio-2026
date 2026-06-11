@@ -1899,7 +1899,7 @@
     .anatomy-item{display:flex;align-items:flex-start;gap:12px;font-size:13px;font-weight:300;color:var(--ink2);padding:12px 14px;background:rgba(155,45,155,.05);border:.5px solid rgba(155,45,155,.15);border-radius:10px;}
     .anatomy-item-dot{width:6px;height:6px;border-radius:50%;background:#9b2d9b;flex-shrink:0;margin-top:6px;}
     .anatomy-item strong{color:var(--ink);font-weight:500;}
-    .design-principles{display:flex;flex-direction:column;gap:8px;margin:20px 0;}
+    .design-principles{display:flex;flex-direction:column;gap:8px;margin:0;}
     .dp-item{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;background:rgba(155,45,155,.05);border:.5px solid rgba(155,45,155,.15);border-radius:10px;}
     .dp-dot{width:6px;height:6px;border-radius:50%;background:#9b2d9b;flex-shrink:0;margin-top:6px;}
     .dp-body{}
