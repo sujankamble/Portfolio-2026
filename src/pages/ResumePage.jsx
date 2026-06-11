@@ -206,6 +206,26 @@ export default function ResumePage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  useEffect(() => {
+    const btn = document.querySelector('.resume-print-btn');
+    if (!btn) return;
+    const onClick = async (e) => {
+      e.preventDefault();
+      const res = await fetch(btn.href);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Sujan_Kamble_UX_Resume_2026.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    };
+    btn.addEventListener('click', onClick);
+    return () => btn.removeEventListener('click', onClick);
+  }, []);
+
   return (
     <div className="case-page resume-page" id="case-resume">
       <div dangerouslySetInnerHTML={{ __html: RESUME_HTML }} />
