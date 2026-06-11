@@ -1476,6 +1476,7 @@
       align-items: start;
     }
     .apaper-hero-left { min-width: 0; }
+    .apaper-hero-right { margin-top: 64px; }
     .apaper-name {
       font-family: "DM Serif Display", serif;
       font-size: clamp(38px, 4.6vw, 60px);
@@ -1709,7 +1710,7 @@
     /* Responsive */
     @media(max-width:1024px){
       .apaper-hero { grid-template-columns: 1fr; gap: 48px; }
-      .apaper-hero-right { display: flex; align-items: center; gap: 32px; justify-content: center; }
+      .apaper-hero-right { display: flex; align-items: center; gap: 32px; justify-content: center; margin-top: 0; }
       .apaper-polaroid-profile { width: 250px; }
       .apaper-stats { grid-template-columns: repeat(2, 1fr); }
       .apaper-cards, .apaper-hobbies { grid-template-columns: 1fr; }
