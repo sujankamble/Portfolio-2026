@@ -701,19 +701,19 @@
     .nav-mobile-drawer {
       display: none;
       position: fixed;
-      top: 64px; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
+      padding-top: 64px;
       background: transparent;
       border-bottom: none;
-      z-index: 999;
-      padding: 0;
+      z-index: 98;
       max-height: 0;
       visibility: hidden;
       overflow: hidden;
       transition: max-height .35s cubic-bezier(.16,1,.3,1), padding .35s ease, visibility .35s;
     }
     .nav-mobile-drawer.open {
-      max-height: 320px;
-      padding: 8px 0 16px;
+      max-height: 384px;
+      padding-bottom: 16px;
       visibility: visible;
       background: rgba(10,6,8,0.97);
       backdrop-filter: blur(20px);
@@ -798,7 +798,8 @@
 
       /* Safe-area insets: keep nav and drawer clear of notches/home indicators */
       nav { box-sizing: border-box; padding-top: env(safe-area-inset-top); height: calc(64px + env(safe-area-inset-top)); }
-      .nav-mobile-drawer { top: calc(64px + env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
+      .nav-mobile-drawer { padding-top: calc(64px + env(safe-area-inset-top)); }
+      .nav-mobile-drawer.open { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
       .lets-talk-section { padding-bottom: calc(env(safe-area-inset-bottom) + 40px); }
 
       /* Condensing header: shrink on scroll for a native feel */
