@@ -217,7 +217,7 @@
     body.light-mode .lets-talk-sub { color: rgba(20,44,73,0.70); }
     body.light-mode .avail-pill { background: rgba(76,175,80,0.08); border-color: rgba(76,175,80,0.30); }
     body.light-mode .avail-text { color: rgba(20,44,73,0.75); }
-    body.light-mode .avail-cta { border-color: rgba(20,44,73,0.18); color: rgba(20,44,73,0.65) !important; }
+    body.light-mode .avail-cta { border-color: rgba(20,44,73,0.18); color: rgba(20,44,73,0.65) !important; background: rgba(255,255,255,.55); }
     body.light-mode .avail-cta:hover { border-color: #2A6DFF; color: #2A6DFF !important; background: rgba(79,127,231,0.06); }
 
     /* ── CASE STUDY HERO ── */
@@ -2445,7 +2445,7 @@
       padding: 9px 18px;
       border-radius: 100px;
       border: .5px solid rgba(255,255,255,.12);
-      background: transparent;
+      background: rgba(255,255,255,.06);
       font-size: 12px;
       font-weight: 400;
       color: rgba(255,255,255,.75);
@@ -3230,12 +3230,12 @@
     .lets-talk-inner .lets-talk-heading { color: rgba(255,255,255,.95); }
     .lets-talk-inner .lets-talk-sub { color: rgba(255,255,255,.75); }
     .lets-talk-inner .avail-text { color: rgba(255,255,255,.85); }
-    .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; }
+    .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; background: rgba(0,0,0,.18); }
     .lets-talk-inner .avail-cta:hover { border-color: var(--orange); color: var(--orange) !important; background: rgba(255,107,53,.10); }
     body.light-mode .lets-talk-inner .lets-talk-heading { color: rgba(255,255,255,.95); }
     body.light-mode .lets-talk-inner .lets-talk-sub { color: rgba(255,255,255,.75); }
     body.light-mode .lets-talk-inner .avail-text { color: rgba(255,255,255,.85); }
-    body.light-mode .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; }
+    body.light-mode .lets-talk-inner .avail-cta { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.85) !important; background: rgba(0,0,0,.18); }
     body.light-mode .lets-talk-inner .avail-cta:hover { border-color: var(--orange); color: var(--orange) !important; background: rgba(255,107,53,.10); }
     .lets-talk-heading {
       font-family: "DM Serif Display", serif;
