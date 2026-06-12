@@ -794,6 +794,28 @@
       .nav-mobile-drawer { display: block; }
       .cs-breadcrumb { display: none !important; }
       nav { justify-content: space-between; }
+
+      /* Safe-area insets: keep nav and drawer clear of notches/home indicators */
+      nav { padding-top: env(safe-area-inset-top); height: calc(64px + env(safe-area-inset-top)); }
+      .nav-mobile-drawer { top: calc(64px + env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
+      .lets-talk-section { padding-bottom: calc(env(safe-area-inset-bottom) + 40px); }
+
+      /* Condensing header: shrink on scroll for a native feel */
+      nav.scrolled, nav.solid {
+        height: calc(48px + env(safe-area-inset-top));
+        transition: height .3s cubic-bezier(.16,1,.3,1), background .3s ease, border-color .3s ease;
+      }
+    }
+
+    /* Tap feedback for touch devices */
+    @media(hover:none) and (pointer:coarse){
+      a, button { -webkit-tap-highlight-color: transparent; }
+      .avail-cta:active, .nav-hamburger:active, .theme-toggle:active,
+      .nav-links a:active, .nav-link-btn:active, .nav-mobile-drawer a:active,
+      .nav-mobile-drawer .nav-link-btn:active, button:active {
+        transform: scale(0.97);
+        transition: transform .1s ease;
+      }
     }
     /* Mobile: standalone name element, hidden on desktop */
     .nav-mobile-name {
