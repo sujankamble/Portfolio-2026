@@ -3496,7 +3496,7 @@
 
       /* Mobile drawer active state */
       .nav-mobile-drawer a.active{color:rgba(255,255,255,.95);}
-      body.light-mode .nav-mobile-drawer a.active{color:#2A6DFF;}
+      body.light-mode .nav-mobile-drawer a.active{color:#142C49;font-weight:500;}
     }
 
     /* ── SMALL PHONE (≤480px) ── */
@@ -3531,7 +3531,7 @@
     }
 
     /* ── LIGHT MODE OVERRIDES for new responsive rules ── */
-    body.light-mode .nav-mobile-drawer a.active{color:#2A6DFF;}
+    body.light-mode .nav-mobile-drawer a.active{color:#142C49;font-weight:500;}
 
     /* ═══ RESUME PAGE ═══ */
     .resume-page{ padding:120px var(--grid-margin) 100px; }
