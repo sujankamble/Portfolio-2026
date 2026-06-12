@@ -2664,6 +2664,8 @@
       transition: color .2s;
     }
     .project-card-full:hover .pcf-title { color: var(--orange); }
+    .pcf-title-sub { color: rgba(255,255,255,.55); font-size: 0.72em; font-family: "DM Sans", sans-serif; font-weight: 300; }
+    body.light-mode .pcf-title-sub { color: rgba(20,44,73,0.48); }
     .pcf-subtitle {
       font-size: 15px;
       font-weight: 300;
