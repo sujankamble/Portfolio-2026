@@ -958,7 +958,7 @@
     .work-header{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:20px;margin-bottom:32px;border-bottom:.5px solid var(--border);flex-wrap:wrap;gap:16px;}
     .work-label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.80);white-space:nowrap;padding-top:6px;}
     .filter-bar{display:flex;gap:6px;flex-wrap:wrap;}
-    .filter-btn{font-family:"DM Sans",sans-serif;font-size:12px;font-weight:400;padding:5px 14px;border-radius:100px;border:.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.62);cursor:none;transition:all .2s;white-space:nowrap;}
+    .filter-btn{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:400;padding:6px 16px;border-radius:100px;border:.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.62);cursor:none;transition:all .2s;white-space:nowrap;}
     .filter-btn:hover{border-color:var(--orange);color:rgba(255,255,255,.9);}
     .filter-btn.active{background:var(--orange);color:#fff;border-color:var(--orange);}
 
@@ -2503,13 +2503,15 @@
       text-align: left;
     }
     .work-section-label p {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 300;
-      color: rgba(255,255,255,.60);
       line-height: 1.65;
       color: rgba(255,255,255,.68) !important;
       text-align: left !important;
       max-width: 480px;
+    }
+    @media(min-width:1025px){
+      .work-section-label p { white-space: nowrap; max-width: none; }
     }
     .wsl-filters {
       display: flex;
