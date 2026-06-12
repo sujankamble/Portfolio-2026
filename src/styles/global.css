@@ -702,22 +702,23 @@
       display: none;
       position: fixed;
       top: 64px; left: 0; right: 0;
-      background: rgba(10,6,8,0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: .5px solid transparent;
+      background: transparent;
+      border-bottom: none;
       z-index: 999;
       padding: 0;
       max-height: 0;
       visibility: hidden;
       overflow: hidden;
-      transition: max-height .35s cubic-bezier(.16,1,.3,1), padding .35s ease, border-color .2s, visibility .35s;
+      transition: max-height .35s cubic-bezier(.16,1,.3,1), padding .35s ease, visibility .35s;
     }
     .nav-mobile-drawer.open {
       max-height: 320px;
       padding: 8px 0 16px;
-      border-bottom-color: rgba(255,255,255,.08);
       visibility: visible;
+      background: rgba(10,6,8,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: .5px solid rgba(255,255,255,.08);
     }
     .nav-mobile-drawer a {
       display: flex;
@@ -747,10 +748,8 @@
     }
 
     /* light mode drawer */
-    body.light-mode .nav-mobile-drawer {
-      background: rgba(255,255,255,0.97);
-    }
     body.light-mode .nav-mobile-drawer.open {
+      background: rgba(255,255,255,0.97);
       border-bottom-color: rgba(20,44,73,.10);
     }
     body.light-mode .nav-mobile-drawer a,
