@@ -3398,8 +3398,8 @@
       /* Project cards: stack image above text */
       .project-card-full{flex-direction:column;padding:28px 32px;}
       .pcf-right{width:100%;flex:none;order:-1;}
-      .pcf-image{aspect-ratio:1/1;padding:16px;box-sizing:border-box;border-radius:12px;}
-      .pcf-image img{object-fit:contain;object-position:center;border-radius:8px;}
+      .pcf-image{aspect-ratio:1/1;border-radius:12px;}
+      .pcf-image img{object-fit:cover;object-position:center;border-radius:12px;}
       .pcf-left{width:100%;}
 
       /* Stats: 2×2 grid */
