@@ -113,6 +113,10 @@ export default function Hero() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
+          <a href="https://medium.com/design-globant/how-a-pharma-project-rewired-my-understanding-of-accessibility-f02166f720db" target="_blank" rel="noreferrer" className="avail-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784L.42 3.69V3.3h6.137l4.733 10.375L15.482 3.3h5.85v.39l-1.832 1.757c-.158.117-.237.31-.205.5v12.586c-.032.19.047.385.205.5l1.79 1.757v.39h-9.001v-.39l1.853-1.8c.181-.18.181-.233.181-.5V7.547l-5.149 13.072h-.696L2.5 7.547v8.74c-.05.355.069.714.32.969l2.41 2.926v.39H0v-.39l2.41-2.926c.249-.255.36-.62.301-.975V6.887z"/></svg>
+            Medium
+          </a>
           <a href="mailto:sujankamble@gmail.com" className="avail-cta">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Email
