@@ -720,9 +720,12 @@
       -webkit-backdrop-filter: blur(20px);
       border-bottom: .5px solid rgba(255,255,255,.08);
     }
-    .nav-mobile-drawer a {
+    .nav-mobile-drawer a,
+    .nav-mobile-drawer button.nav-link-btn {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+      text-align: left;
       gap: 12px;
       padding: 14px 24px;
       font-size: 15px;
@@ -733,15 +736,17 @@
       transition: background .15s, color .15s;
       width: 100%;
       letter-spacing: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
     }
-    .nav-mobile-drawer a:hover {
+    .nav-mobile-drawer a:hover,
+    .nav-mobile-drawer button.nav-link-btn:hover {
       background: rgba(255,255,255,.05);
       color: rgba(255,255,255,.95);
     }
     .nav-mobile-drawer .drawer-divider {
-      height: .5px;
-      background: rgba(255,255,255,.07);
-      margin: 8px 24px;
+      display: none;
     }
     .nav-mobile-drawer .drawer-resume {
       color: var(--orange) !important;
@@ -753,10 +758,12 @@
       border-bottom-color: rgba(20,44,73,.10);
     }
     body.light-mode .nav-mobile-drawer a,
+    body.light-mode .nav-mobile-drawer button.nav-link-btn,
     body.light-mode .nav-mobile-drawer button.theme-toggle {
       color: rgba(20,44,73,.78);
     }
     body.light-mode .nav-mobile-drawer a:hover,
+    body.light-mode .nav-mobile-drawer button.nav-link-btn:hover,
     body.light-mode .nav-mobile-drawer button.theme-toggle:hover {
       background: rgba(20,44,73,.04);
       color: #142C49;
