@@ -796,7 +796,7 @@
       nav { justify-content: space-between; }
 
       /* Safe-area insets: keep nav and drawer clear of notches/home indicators */
-      nav { padding-top: env(safe-area-inset-top); height: calc(64px + env(safe-area-inset-top)); }
+      nav { box-sizing: border-box; padding-top: env(safe-area-inset-top); height: calc(64px + env(safe-area-inset-top)); }
       .nav-mobile-drawer { top: calc(64px + env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
       .lets-talk-section { padding-bottom: calc(env(safe-area-inset-bottom) + 40px); }
 
