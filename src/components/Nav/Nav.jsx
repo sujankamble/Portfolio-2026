@@ -54,7 +54,7 @@ export default function Nav() {
           <li><div className="nav-pill-sep"></div></li>
           <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About me</Link></li>
           <li><div className="nav-pill-sep"></div></li>
-          <li><a href="/Portfolio-2026/docs/resume.pdf" download="Resume.pdf" className="nav-resume">Resume</a></li>
+          <li><Link to="/resume" className={`nav-resume${location.pathname === '/resume' ? ' active' : ''}`}>Resume</Link></li>
         </ul>
         <div className="nav-controls">
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle light/dark mode">
@@ -71,7 +71,7 @@ export default function Nav() {
         <button className="nav-link-btn" onClick={scrollToWork}>Work</button>
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About me</Link>
         <div className="drawer-divider"></div>
-        <a href="/Portfolio-2026/docs/resume.pdf" download="Resume.pdf" className="drawer-resume">Resume</a>
+        <Link to="/resume" className={`drawer-resume${location.pathname === '/resume' ? ' active' : ''}`}>Resume</Link>
       </div>
     </>
   );

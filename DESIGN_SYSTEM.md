@@ -149,3 +149,28 @@ public/
 2. **Editing existing content**: Modify the HTML string in the relevant page's `CASE_HTML` or `WORK_HTML` constant.
 3. **New styles**: Add to `global.css`. Follow the `--ink` / `--bg` / `--surface` token system. Always add a `body.light-mode` override for any new color.
 4. **Replacing project images**: Drop new images in `public/images/` and update the `src` attributes in `HomePage.jsx` `WORK_HTML`.
+
+---
+
+## Recent Changes Log
+
+### Banking App Part 2 (Product Page Redesign)
+- Define section: added `cs-subsection-bg` background to the "Research Team Collaboration" box and to the "Product Page Anatomy" framework group (Identified Products & Sub-products, products grid, approach note).
+- Develop section: renamed "Designing for Confidence The Loan Product Experience" to "The Loan Product Experience"; added `cs-subsection-bg` to "Loan Workflow Step by Step"; added `cs-subsection-bg` to "Educational Content Strategy".
+- Deliver section: added `cs-subsection-bg` to "Product Page Anatomy Replicable Across All Product Types"; restyled `.anatomy-item` to match `.dp-item` (purple tint, padding, bullet dots via `.anatomy-item-dot`); removed the divider line under column labels; top-aligned the two columns and removed the `.design-principles` extra top margin; removed the closing pull-quote.
+
+### Audit Platform
+- Project Overview: changed "My Role" to "UX Designer" with new paragraph; replaced Outcomes with 100% / 70% / Reduced.
+- The Brief: removed the 4-tile metrics row, "Active participation in meetings" and "Distilled insights from user research" role-pills, and the closing quote; replaced the intro paragraph with new copy; restored a single "objective" paragraph in a single-column `.objective-block` to remove dead right-column space; updated three role-pill descriptions (Contextual Interviews, Wireframes & high-fidelity designs, Documented UX guidelines).
+- Discovery: updated chapter hook and intro/outro paragraphs; removed the closing pull-quote.
+- Define: updated the intro paragraph; removed the "This wasn't bureaucracy..." paragraph.
+- Develop: updated chapter hook and copy; removed the "But a north star only works..." paragraph; removed the closing pull-quote.
+- Deliver: updated chapter hook and ownership paragraph; removed the entire "Analytics Centre Modules Owned" grid.
+- Reflect: updated intro paragraph; wrapped "Key Learnings" in `cs-subsection-bg`; removed the closing pull-quote.
+
+### About Page
+- Added corner radius to the profile polaroid image; top-aligned the hero photo column with the "Sujan Kamble" heading (via `.apaper-hero-right { margin-top: 64px }`, reset on mobile).
+- Removed the "PUNE · INDIA · UX" stamp.
+- Removed the red ruled line under "What I do" card titles.
+- Removed FigJam, Zeplin, and InVision from "Tools I play with".
+
