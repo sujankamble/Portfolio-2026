@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="hz:slide-selector" content=".slide" />
+<meta name="hz:canvas-width" content="1584" />
+<meta name="hz:canvas-height" content="396" />
+<link rel="stylesheet" href="https://use.typekit.net/vvy4dgt.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0608; }
+
+  .slide {
+    position:relative;
+    background:#0a0608;
+    overflow:hidden;
+    font-family:"dm-sans", sans-serif;
+  }
+
+  /* shared grid motif */
+  .grid-lines {
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 8.3%);
+    opacity:0.5;
+  }
+  .glow {
+    position:absolute;
+    width:560px; height:560px;
+    background:radial-gradient(circle, rgba(255,107,53,0.35) 0%, rgba(255,107,53,0) 70%);
+    border-radius:50%;
+    filter:blur(10px);
+  }
+  .url-tag {
+    color:rgba(255,255,255,0.55);
+    font-size:15px;
+    letter-spacing:0.02em;
+  }
+  .url-tag .dot { color:#FF6B35; }
+  .name {
+    font-family:"dm-serif-display", serif;
+    font-weight:400;
+    color:rgba(255,255,255,0.95);
+    letter-spacing:-0.02em;
+    line-height:1.05;
+  }
+  .role {
+    color:#FF6B35;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  .tagline {
+    color:rgba(255,255,255,0.62);
+    line-height:1.5;
+    font-weight:400;
+  }
+  .accent-rule {
+    background:#FF6B35;
+    border-radius:2px;
+  }
+
+  /* SLIDE 1 — LinkedIn banner 1584x396 */
+  #banner {
+    width:1584px; height:396px;
+    display:flex;
+    align-items:center;
+    padding:0 96px;
+  }
+  #banner .glow { top:-220px; right:60px; }
+  #banner .text-block { position:relative; z-index:2; max-width:760px; }
+  #banner .accent-rule { width:56px; height:4px; margin-bottom:22px; }
+  #banner .name { font-size:54px; margin-bottom:10px; }
+  #banner .role { font-size:20px; margin-bottom:16px; display:block; }
+  #banner .tagline { font-size:18px; max-width:600px; }
+  #banner .url-tag { position:absolute; right:96px; bottom:40px; z-index:2; }
+
+  /* SLIDE 2 — link-share thumbnail 1200x630 */
+  #thumb {
+    width:1200px; height:630px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 100px;
+  }
+  #thumb .glow { top:-180px; left:50%; transform:translateX(-50%); width:700px; height:700px; }
+  #thumb .text-block { position:relative; z-index:2; }
+  #thumb .accent-rule { width:64px; height:4px; margin:0 auto 26px; }
+  #thumb .name { font-size:64px; margin-bottom:14px; }
+  #thumb .role { font-size:22px; margin-bottom:20px; display:block; }
+  #thumb .tagline { font-size:19px; max-width:620px; margin:0 auto; }
+  #thumb .url-tag { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); z-index:2; }
+</style>
+</head>
+<body>
+
+  <div class="slide" id="banner" data-canvas-width="1584" data-canvas-height="396">
+    <div class="grid-lines"></div>
+    <div class="glow"></div>
+    <div class="text-block">
+      <div class="accent-rule"></div>
+      <div class="name">Sujan Kamble</div>
+      <span class="role">Senior UX Designer</span>
+      <div class="tagline">Research-led UX. 13+ years turning complex systems into clarity.</div>
+    </div>
+    <div class="url-tag">sujankambleux<span class="dot">.</span>in</div>
+  </div>
+
+  <div class="slide" id="thumb" data-canvas-width="1200" data-canvas-height="630">
+    <div class="grid-lines"></div>
+    <div class="glow"></div>
+    <div class="text-block">
+      <div class="accent-rule"></div>
+      <div class="name">Sujan Kamble</div>
+      <span class="role">Senior UX Designer</span>
+      <div class="tagline">Research-led UX. 13+ years turning complex systems into clarity.</div>
+    </div>
+    <div class="url-tag">sujankambleux<span class="dot">.</span>in</div>
+  </div>
+
+</body>
+</html>
