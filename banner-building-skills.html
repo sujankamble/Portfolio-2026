@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="hz:slide-selector" content=".slide" />
+<meta name="hz:canvas-width" content="1584" />
+<meta name="hz:canvas-height" content="396" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0608; }
+
+  .slide {
+    position:relative;
+    width:1584px; height:396px;
+    overflow:hidden;
+    background:#0a0608;
+    font-family:"DM Sans", sans-serif;
+  }
+
+  /* glossy wave ribbon, built from overlapping rotated/blurred ellipses */
+  .wave {
+    position:absolute;
+    border-radius:50%;
+  }
+  .wave-1 {
+    width:1100px; height:1100px;
+    top:-520px; left:260px;
+    background:radial-gradient(circle at 60% 40%, rgba(255,140,80,0.95) 0%, rgba(255,107,53,0.55) 32%, rgba(255,107,53,0) 60%);
+    filter:blur(2px);
+  }
+  .wave-2 {
+    width:900px; height:900px;
+    top:-260px; left:560px;
+    background:radial-gradient(circle at 50% 50%, rgba(10,6,8,1) 0%, rgba(10,6,8,1) 46%, rgba(255,107,53,0) 50%);
+  }
+  .wave-3 {
+    width:760px; height:760px;
+    top:120px; left:1180px;
+    background:radial-gradient(circle at 40% 40%, rgba(255,107,53,0.5) 0%, rgba(255,107,53,0) 65%);
+    filter:blur(4px);
+  }
+
+  .text-block {
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding-left:760px;
+  }
+  .line1 {
+    font-size:36px;
+    font-weight:400;
+    color:rgba(255,255,255,0.92);
+    line-height:1.25;
+  }
+  .line2 {
+    font-size:48px;
+    font-weight:700;
+    color:#FFFFFF;
+    line-height:1.25;
+    text-shadow:0 0 28px rgba(255,255,255,0.45), 0 0 60px rgba(255,107,53,0.35);
+  }
+</style>
+</head>
+<body>
+
+  <div class="slide" data-canvas-width="1584" data-canvas-height="396" data-document-role="page" data-label="Building Skills Banner">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+    <div class="text-block">
+      <div class="line1">Building Skills</div>
+      <div class="line2">Building Success</div>
+    </div>
+  </div>
+
+</body>
+</html>
