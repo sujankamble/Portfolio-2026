@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="hz:slide-selector" content=".slide" />
+<meta name="hz:canvas-width" content="1584" />
+<meta name="hz:canvas-height" content="396" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0&family=DM+Sans:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0608; }
+
+  .slide {
+    position:relative;
+    width:1584px; height:396px;
+    overflow:hidden;
+    background:#0a0608;
+    font-family:"DM Sans", sans-serif;
+  }
+
+  .hero-glow {
+    position:absolute; inset:0; z-index:1;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(129,28,129,.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 60%, rgba(255,107,53,.08) 0%, transparent 60%);
+  }
+
+  .particle-field {
+    position:absolute; inset:0; z-index:1;
+  }
+
+  .hero-arc {
+    position:absolute;
+    bottom:-80px; right:8%;
+    z-index:1;
+    width:400px; height:400px;
+    border-radius:50%;
+    border:1px solid transparent;
+    border-top-color:rgba(55,255,233,0.60);
+    border-right-color:rgba(0,224,200,0.10);
+  }
+  .hero-arc-2 {
+    position:absolute;
+    bottom:-40px; right:10%;
+    z-index:1;
+    width:280px; height:280px;
+    border-radius:50%;
+    border:.5px solid #fb3b3b38;
+    border-top-color:rgba(255,68,0,0.88);
+  }
+  .hero-dot {
+    position:absolute;
+    bottom:70px; right:23%;
+    z-index:2;
+    width:14px; height:14px;
+    border-radius:50%;
+    background:#FF6B35;
+    box-shadow:0 0 0 1px rgba(255,107,53,.4), 0 0 16px rgba(255,107,53,.7);
+  }
+
+  .text-block {
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding-left:96px;
+  }
+  .line1 {
+    font-family:"DM Serif Display", serif;
+    font-size:38px;
+    font-weight:400;
+    color:rgba(255,255,255,0.92);
+    line-height:1.2;
+  }
+  .line2 {
+    font-family:"DM Serif Display", serif;
+    font-size:50px;
+    font-weight:400;
+    color:#FF6B35;
+    line-height:1.2;
+  }
+</style>
+</head>
+<body>
+
+  <div class="slide" data-canvas-width="1584" data-canvas-height="396" data-document-role="page" data-label="Hero Style Banner">
+    <div class="hero-glow"></div>
+    <svg class="particle-field" width="1584" height="396" viewBox="0 0 1584 396">
+    <circle cx="513.0" cy="59.7" r="1.70" fill="rgba(190,70,240,0.29)"/>
+    <circle cx="579.3" cy="23.0" r="1.41" fill="rgba(255,120,55,0.27)"/>
+    <circle cx="110.7" cy="35.9" r="1.25" fill="rgba(255,120,55,0.70)"/>
+    <circle cx="353.6" cy="248.5" r="2.30" fill="rgba(255,120,55,0.57)"/>
+    <circle cx="1546.4" cy="18.4" r="2.12" fill="rgba(255,120,55,0.41)"/>
+    <circle cx="186.6" cy="122.2" r="2.03" fill="rgba(190,70,240,0.35)"/>
+    <circle cx="1012.0" cy="147.5" r="1.50" fill="rgba(255,120,55,0.28)"/>
+    <circle cx="326.2" cy="269.4" r="1.26" fill="rgba(190,70,240,0.42)"/>
+    <circle cx="717.8" cy="118.7" r="1.99" fill="rgba(255,120,55,0.63)"/>
+    <circle cx="909.9" cy="208.0" r="2.15" fill="rgba(255,120,55,0.65)"/>
+    <circle cx="1552.6" cy="46.8" r="1.24" fill="rgba(255,120,55,0.67)"/>
+    <circle cx="774.5" cy="15.5" r="1.74" fill="rgba(190,70,240,0.67)"/>
+    <circle cx="1386.8" cy="124.2" r="1.79" fill="rgba(190,70,240,0.58)"/>
+    <circle cx="722.6" cy="332.6" r="2.29" fill="rgba(190,70,240,0.51)"/>
+    <circle cx="96.1" cy="277.8" r="1.69" fill="rgba(100,210,255,0.80)"/>
+    <circle cx="450.8" cy="152.8" r="1.74" fill="rgba(190,70,240,0.26)"/>
+    <circle cx="266.2" cy="46.4" r="0.52" fill="rgba(255,120,55,0.67)"/>
+    <circle cx="392.2" cy="154.8" r="2.14" fill="rgba(255,120,55,0.29)"/>
+    <circle cx="870.3" cy="349.8" r="2.04" fill="rgba(255,120,55,0.73)"/>
+    <circle cx="657.8" cy="142.1" r="2.17" fill="rgba(255,120,55,0.78)"/>
+    <circle cx="279.1" cy="91.9" r="0.87" fill="rgba(190,70,240,0.52)"/>
+    <circle cx="416.2" cy="1.6" r="1.24" fill="rgba(190,70,240,0.45)"/>
+    <circle cx="1509.7" cy="273.4" r="1.43" fill="rgba(190,70,240,0.59)"/>
+    <circle cx="85.5" cy="356.2" r="1.96" fill="rgba(100,210,255,0.73)"/>
+    <circle cx="621.5" cy="158.0" r="0.61" fill="rgba(255,120,55,0.60)"/>
+    <circle cx="106.7" cy="82.7" r="0.72" fill="rgba(255,120,55,0.44)"/>
+    <circle cx="0.4" cy="59.9" r="0.60" fill="rgba(255,120,55,0.45)"/>
+    <circle cx="1384.9" cy="243.2" r="0.70" fill="rgba(255,120,55,0.39)"/>
+    <circle cx="576.8" cy="48.6" r="2.10" fill="rgba(190,70,240,0.80)"/>
+    <circle cx="766.4" cy="34.0" r="0.60" fill="rgba(255,120,55,0.44)"/>
+    <circle cx="1312.9" cy="63.9" r="0.45" fill="rgba(190,70,240,0.77)"/>
+    <circle cx="232.2" cy="215.1" r="0.45" fill="rgba(240,240,255,0.54)"/>
+    <circle cx="1367.5" cy="275.7" r="0.92" fill="rgba(255,120,55,0.45)"/>
+    <circle cx="1222.7" cy="210.9" r="1.96" fill="rgba(255,120,55,0.43)"/>
+    <circle cx="1285.4" cy="390.0" r="2.11" fill="rgba(100,210,255,0.69)"/>
+    <circle cx="1172.0" cy="89.8" r="1.44" fill="rgba(255,120,55,0.45)"/>
+    <circle cx="44.3" cy="110.6" r="0.92" fill="rgba(240,240,255,0.63)"/>
+    <circle cx="708.4" cy="371.1" r="2.38" fill="rgba(255,120,55,0.78)"/>
+    <circle cx="349.2" cy="89.8" r="0.79" fill="rgba(190,70,240,0.36)"/>
+    <circle cx="1426.1" cy="332.8" r="1.36" fill="rgba(100,210,255,0.61)"/>
+    <circle cx="134.3" cy="261.6" r="2.22" fill="rgba(100,210,255,0.68)"/>
+    <circle cx="757.2" cy="70.7" r="1.98" fill="rgba(100,210,255,0.43)"/>
+    <circle cx="1539.1" cy="156.8" r="1.20" fill="rgba(100,210,255,0.77)"/>
+    <circle cx="269.3" cy="50.3" r="0.70" fill="rgba(100,210,255,0.75)"/>
+    <circle cx="231.5" cy="327.3" r="2.36" fill="rgba(255,120,55,0.61)"/>
+    <circle cx="869.1" cy="51.9" r="0.43" fill="rgba(190,70,240,0.78)"/>
+    <circle cx="834.1" cy="369.7" r="1.27" fill="rgba(100,210,255,0.73)"/>
+    <circle cx="334.3" cy="99.7" r="0.99" fill="rgba(190,70,240,0.38)"/>
+    <circle cx="410.8" cy="165.9" r="0.66" fill="rgba(255,120,55,0.75)"/>
+    <circle cx="725.7" cy="231.0" r="2.21" fill="rgba(240,240,255,0.48)"/>
+    <circle cx="794.6" cy="210.6" r="1.45" fill="rgba(255,120,55,0.26)"/>
+    <circle cx="290.0" cy="1.6" r="2.00" fill="rgba(190,70,240,0.34)"/>
+    <circle cx="1148.7" cy="220.4" r="1.05" fill="rgba(190,70,240,0.54)"/>
+    <circle cx="1242.3" cy="42.0" r="1.52" fill="rgba(255,120,55,0.39)"/>
+    <circle cx="1223.3" cy="201.1" r="1.52" fill="rgba(240,240,255,0.67)"/>
+    <circle cx="702.1" cy="242.6" r="1.41" fill="rgba(190,70,240,0.53)"/>
+    <circle cx="716.5" cy="211.2" r="1.36" fill="rgba(190,70,240,0.77)"/>
+    <circle cx="1388.4" cy="373.1" r="0.92" fill="rgba(240,240,255,0.56)"/>
+    <circle cx="1330.6" cy="54.3" r="0.64" fill="rgba(255,120,55,0.49)"/>
+    <circle cx="381.2" cy="29.0" r="1.74" fill="rgba(240,240,255,0.68)"/>
+    <circle cx="244.6" cy="283.6" r="1.72" fill="rgba(240,240,255,0.33)"/>
+    <circle cx="1532.6" cy="87.0" r="2.31" fill="rgba(190,70,240,0.47)"/>
+    <circle cx="1568.0" cy="329.6" r="0.72" fill="rgba(190,70,240,0.49)"/>
+    <circle cx="537.2" cy="77.5" r="1.04" fill="rgba(255,120,55,0.65)"/>
+    <circle cx="877.6" cy="174.4" r="0.44" fill="rgba(190,70,240,0.43)"/>
+    <circle cx="811.4" cy="25.5" r="2.37" fill="rgba(240,240,255,0.68)"/>
+    <circle cx="166.0" cy="105.2" r="0.48" fill="rgba(255,120,55,0.68)"/>
+    <circle cx="205.2" cy="167.2" r="2.22" fill="rgba(255,120,55,0.70)"/>
+    <circle cx="236.6" cy="364.0" r="1.54" fill="rgba(255,120,55,0.64)"/>
+    </svg>
+    <div class="hero-arc"></div>
+    <div class="hero-arc-2"></div>
+    <div class="hero-dot"></div>
+    <div class="text-block">
+      <div class="line1">Building Skills</div>
+      <div class="line2">Building Success</div>
+    </div>
+  </div>
+
+</body>
+</html>
