@@ -2744,7 +2744,7 @@
     .project-card-full:hover .pcf-image { transform: scale(1.02); }
     /* Light mode: no border, just a very subtle shadow */
     body.light-mode .pcf-image {
-      box-shadow: 0 2px 16px rgba(20,44,73,0.08);
+      box-shadow: 0 4px 24px rgba(20,44,73,0.05);
     }
     .pcf-image img { width:100%;height:100%;object-fit:cover;border-radius:12px; }
     .pcf-image-ph { font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.18);font-family:"DM Sans",sans-serif; }
