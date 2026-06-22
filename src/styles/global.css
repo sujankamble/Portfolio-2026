@@ -3401,6 +3401,13 @@
       .pcf-image{aspect-ratio:1/1;border-radius:12px;}
       .pcf-image img{object-fit:cover;object-position:center;border-radius:12px;}
       .pcf-left{width:100%;}
+      /* Audit / No-code / MES: full mockup visible, no aggressive square crop */
+      .project-card-full[data-case="audit"] .pcf-right,
+      .project-card-full[data-case="nocode"] .pcf-right,
+      .project-card-full[data-case="mes"] .pcf-right{padding:0 0 20px 0;}
+      .project-card-full[data-case="audit"] .pcf-image,
+      .project-card-full[data-case="nocode"] .pcf-image,
+      .project-card-full[data-case="mes"] .pcf-image{aspect-ratio:16/10;}
 
       /* Stats: 2×2 grid */
       .home-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px 32px;}
