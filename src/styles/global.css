@@ -2742,9 +2742,9 @@
       transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .3s ease;
     }
     .project-card-full:hover .pcf-image { transform: scale(1.02); }
-    /* Light mode: no border, just a very subtle shadow */
+    /* Light mode: no border, no shadow */
     body.light-mode .pcf-image {
-      box-shadow: 0 4px 24px rgba(20,44,73,0.05);
+      box-shadow: none;
     }
     .pcf-image img { width:100%;height:100%;object-fit:cover;border-radius:12px; }
     .pcf-image-ph { font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.18);font-family:"DM Sans",sans-serif; }
