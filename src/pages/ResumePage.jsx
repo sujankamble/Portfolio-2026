@@ -174,7 +174,7 @@ const RESUME_HTML = `
         <article class="resume-job">
           <div class="resume-job-head">
             <h3 class="resume-job-role">UX Designer</h3>
-            <span class="resume-job-dates">Jun 2014 &ndash; Feb 2020 &nbsp;&middot;&nbsp; Pune</span>
+            <span class="resume-job-dates">Jun 2014 &ndash; Jan 2020 &nbsp;&middot;&nbsp; Pune</span>
           </div>
           <p class="resume-job-org">Cognizant Technology Solutions &middot; Banking, Finance &amp; Big Data</p>
           <ul class="resume-bullets">
@@ -186,7 +186,7 @@ const RESUME_HTML = `
         <article class="resume-job">
           <div class="resume-job-head">
             <h3 class="resume-job-role">Interaction Designer</h3>
-            <span class="resume-job-dates">Dec 2012 &ndash; Feb 2014 &nbsp;&middot;&nbsp; Pune</span>
+            <span class="resume-job-dates">Dec 2012 &ndash; May 2014 &nbsp;&middot;&nbsp; Hyderabad</span>
           </div>
           <p class="resume-job-org">Divami Software Pvt. Ltd. &middot; Enterprise Web Applications</p>
           <ul class="resume-bullets">
